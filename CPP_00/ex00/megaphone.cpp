@@ -6,7 +6,7 @@
 /*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:07:10 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/12 17:44:58 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/16 15:06:42 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,8 @@ int	main(int ac, char **av)
 				av[tab][i] -= 32;
 			i++;
 		}
-		tab++;
-	}
-	tab = 1;
-	while (av[tab])
 		std::cout << av[tab++];
+	}
 	std::cout << "\n";
 	return (0);
 }
