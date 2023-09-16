@@ -1,19 +1,24 @@
 
-NAME = My Awesome PhoneBook
+NAME =		phone_book
 
-SRC = 
+CC =		c++
 
-OBJ = $(SRC:.c=.o)
+CFLAGS =	-Wall -Wextra -Werror
 
-$(NAME):
-	c++ $(OBJ) -o $(NAME)
+SRC =		main.cpp \
+		PhoneBook.cpp
 
-all:	$(NAME)
+OBJ =		$(SRC:.c=.o)
+
+$(NAME):	$(OBJ)
+		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+all:		$(NAME)
 
 clean:
-	rm -f $(OBJ)
+		rm -f $(OBJ)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:		clean
+		rm -f $(NAME)
 
-re: fclean $(NAME)
+re:		fclean $(NAME)
