@@ -3,7 +3,7 @@ NAME =		phone_book
 
 CC =		c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g
 
 SRC =		main.cpp \
 		PhoneBook.cpp
@@ -11,14 +11,17 @@ SRC =		main.cpp \
 OBJ =		$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-		$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+		@echo "Installing PhOnE_bOok..."
+		@sleep 2
+		@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+		@echo "Installation done ! You can remove the floppy disk."
 
 all:		$(NAME)
 
 clean:
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean:		clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re:		fclean $(NAME)

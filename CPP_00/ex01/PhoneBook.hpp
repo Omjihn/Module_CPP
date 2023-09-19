@@ -5,19 +5,19 @@ class	PhoneBook
 
 		PhoneBook( void );
 		~PhoneBook( void );
-		ft_test(PhoneBook);
+
+		void    ft_add( void );
+		void	ft_search( void );
 
 	private:
-		class Contact
+
+		class	Contact
 		{
 			public:
-				char	*fisrt_name;
-				char	*last_name;
-				char	*nickname;
-				char	*phone_number;
-				char	*darkest_secret;
+				std::string	infos[5];
 		};
 
-	private:
-		Contact	data[8];
+		Contact		data[8];
+		int		i;
+		int		nb_data;
 };
