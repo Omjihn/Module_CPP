@@ -3,15 +3,15 @@ NAME =		phone_book
 
 CC =		c++
 
-CFLAGS =	-Wall -Wextra -Werror
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRC =		main.cpp \
 		PhoneBook.cpp
 
-OBJ =		$(SRC:.c=.o)
+OBJ =		$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 all:		$(NAME)
 
