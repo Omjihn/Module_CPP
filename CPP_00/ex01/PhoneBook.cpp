@@ -10,7 +10,7 @@ PhoneBook::PhoneBook( void )
 
 PhoneBook::~PhoneBook( void )
 {
-        std::cout << "Hope to see you again in the PhOnEbOoK !" << std::endl;
+        std::cout << "Hope to see you again in the PhOnEbOoK !" << std::endl << "Don't forget computers are the future." << std::endl;
         return ;
 }
 
@@ -75,10 +75,13 @@ void	PhoneBook::ft_search( void )
 		std::cout << "|" << i << "         |" << this->data[i].infos[0] <<\
 			"|" << this->data[i].infos[1] << "|" << this->data[i].infos[2]\
 			<< "|" << std::endl;
+		usleep (ft_rand());
 		std::cout << "|__________|__________|__________|__________|" << std::endl;
+		usleep (ft_rand());
 		i++;
 	}
 	std::cout << std::endl << "Wich index do you want to print ?" << std::endl;
+	usleep (ft_rand());
 	std::getline(std::cin, str);
 	while (str.length() != 1 || ((str.at(0) - 48) >= i) || ((str.at(0) - 48) < 0))
 		std::getline(std::cin, str);

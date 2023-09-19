@@ -12,8 +12,11 @@ int	ft_rand(void)
 void	ft_print_header(void)
 {
 	std::cout << "_____________________________________________" << std::endl;
+	usleep (ft_rand());
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
+	usleep (ft_rand());
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
+	usleep (ft_rand());
 
 }
 
