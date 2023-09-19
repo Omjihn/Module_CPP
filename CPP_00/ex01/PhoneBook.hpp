@@ -3,11 +3,11 @@ class	PhoneBook
 {
 	public:
 
-		PhoneBook( void );
-		~PhoneBook( void );
+		PhoneBook(void);
+		~PhoneBook(void);
 
-		void    ft_add( void );
-		void	ft_search( void );
+		void    ft_add(void);
+		void	ft_search(void);
 
 	private:
 

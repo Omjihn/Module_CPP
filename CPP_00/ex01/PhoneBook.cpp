@@ -63,6 +63,7 @@ void	PhoneBook::ft_search( void )
 {
 	int	i = 0;
 	std::string	str;
+	const char name[][15] = {"First name    ", "Last name     ", "Nickname      ", "Phone number  ", "Darkest secret"};
 	
 	if (!this->nb_data)
 	{
@@ -80,10 +81,21 @@ void	PhoneBook::ft_search( void )
 		usleep (ft_rand());
 		i++;
 	}
-	std::cout << std::endl << "Wich index do you want to print ?" << std::endl;
+	std::cout << std::endl << "Wich index do you want to print ? ";
 	usleep (ft_rand());
 	std::getline(std::cin, str);
 	while (str.length() != 1 || ((str.at(0) - 48) >= i) || ((str.at(0) - 48) < 0))
+	{
+
+	        std::cout << "Wrong index, enter a new one: ";
 		std::getline(std::cin, str);
-	std::cout << str.at(0) << std::endl;
+	}
+	std::cout << std::endl;
+	i = 0;
+	while (i < 5)
+	{
+	        std::cout << name[i] << ": " << this->data[str.at(0) - 48].infos[i] << std::endl;
+	        i++;
+	}
+	std::cout << std::endl;
 }

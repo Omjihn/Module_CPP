@@ -25,7 +25,9 @@ static void	ft_print_wellcome(void)
 
 	std::cout << "||  WeLlCoMe In PhOnEbOoK ||" << std::endl;
 	usleep (ft_rand());
-	std::cout << "Today we are the: 12/06/1981" << std::endl;
+        std::time_t currentTime = std::time(NULL);
+        std::tm *timeInfo = std::localtime(&currentTime);
+        std::cout << "Current date: " << timeInfo->tm_mday << "/" << timeInfo->tm_mon + 1 << "/1981" << std::endl;
 	usleep (ft_rand());
 	std::cout << "Have fun with this PoNeBoOk ^^" << std::endl << std::endl;
 	usleep (ft_rand());
