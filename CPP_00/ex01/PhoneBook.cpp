@@ -70,6 +70,17 @@ void	PhoneBook::ft_search( void )
 		std::cout << "No contact to display" << std::endl;
 		return ;
 	}
+	if (this->nb_data == 1)
+	{
+		i = 0;
+		while (i < 5)
+		{
+		        std::cout << name[i] << ": " << this->data[0].infos[i] << std::endl;
+		        usleep (ft_rand());
+		        i++;
+		}
+		return ;
+	}
 	ft_print_header();
 	while (i < this->nb_data)
 	{
@@ -95,6 +106,7 @@ void	PhoneBook::ft_search( void )
 	while (i < 5)
 	{
 	        std::cout << name[i] << ": " << this->data[str.at(0) - 48].infos[i] << std::endl;
+	        usleep (ft_rand());
 	        i++;
 	}
 	std::cout << std::endl;
