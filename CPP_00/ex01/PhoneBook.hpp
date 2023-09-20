@@ -1,3 +1,4 @@
+# include "Contact.hpp"
 
 class	PhoneBook
 {
@@ -10,12 +11,6 @@ class	PhoneBook
 		void	ft_search(void);
 
 	private:
-
-		class	Contact
-		{
-			public:
-				std::string	infos[5];
-		};
 
 		Contact		data[8];
 		int		i;

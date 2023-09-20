@@ -3,10 +3,11 @@ NAME =		phone_book
 
 CC =		c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRC =		main.cpp \
-		PhoneBook.cpp
+		PhoneBook.cpp \
+		ft_print.cpp
 
 OBJ =		$(SRC:.cpp=.o)
 

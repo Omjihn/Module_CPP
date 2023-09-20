@@ -26,13 +26,7 @@ static std::string	ft_get_input(const char *name)
 		std::cout << "Enter " << name << ": ";
 		std::getline(std::cin, str);
 	}
-	if (str.length() > 10)
-	{
-		str.resize(10);
-		str.replace(9, 1, ".");
-	}
-	else if (str.length() < 10)
-		str.resize(10, ' ');
+	std::replace(str.begin(), str.end(), '\t', ' ');
 	return (str);
 }
 
@@ -46,7 +40,7 @@ void	PhoneBook::ft_add( void )
 	{
 		res = ft_get_input(name[i]);
 		usleep (ft_rand());
-		this->data[this->i].infos[i++] = res.substr(0, 10);
+		this->data[this->i].infos[i++].assign(res);
 		res.clear();
 	}
 	std::cout << "Contact added" << std::endl;
@@ -84,12 +78,7 @@ void	PhoneBook::ft_search( void )
 	ft_print_header();
 	while (i < this->nb_data)
 	{
-		std::cout << "|" << i << "         |" << this->data[i].infos[0] <<\
-			"|" << this->data[i].infos[1] << "|" << this->data[i].infos[2]\
-			<< "|" << std::endl;
-		usleep (ft_rand());
-		std::cout << "|__________|__________|__________|__________|" << std::endl;
-		usleep (ft_rand());
+		ft_print_infos(this->data[i].infos, i);
 		i++;
 	}
 	std::cout << std::endl << "Wich index do you want to print ? ";
@@ -98,7 +87,7 @@ void	PhoneBook::ft_search( void )
 	while (str.length() != 1 || ((str.at(0) - 48) >= i) || ((str.at(0) - 48) < 0))
 	{
 
-	        std::cout << "Wrong index, enter a new one: ";
+		std::cout << "Wrong index, enter a new one: ";
 		std::getline(std::cin, str);
 	}
 	std::cout << std::endl;
