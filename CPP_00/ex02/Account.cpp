@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 16:05:52 by gbricot           #+#    #+#             */
+/*   Updated: 2023/09/21 16:10:55 by gbricot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <ctime>
+#include <cstdio>
 #include <chrono>
 #include "Account.hpp"
 
@@ -82,13 +94,13 @@ void    Account::displayStatus( void ) const
 
 void    Account::_displayTimestamp( void )
 {
-    std::time_t currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    std::tm* timeinfo = std::localtime(&currentTime);
-    char    str[16];
-    std::sprintf(str, "%04d%02d%02d_%02d%02d%02d", timeinfo->tm_year + 1900,
-        timeinfo->tm_mon + 1, timeinfo->tm_mday, timeinfo->tm_hour,
-        timeinfo->tm_min, timeinfo->tm_sec);
-    std::cout << "[" << str << "] ";
+	std::time_t currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	std::tm* timeinfo = std::localtime(&currentTime);
+	char	str[16];
+	std::sprintf(str, "%04d%02d%02d_%02d%02d%02d", timeinfo->tm_year + 1900,
+	timeinfo->tm_mon + 1, timeinfo->tm_mday, timeinfo->tm_hour,
+	timeinfo->tm_min, timeinfo->tm_sec);
+	std::cout << "[" << str << "] ";
     //std::cout << "[19920104_091532] "; debug
 }
 

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 16:04:34 by gbricot           #+#    #+#             */
+/*   Updated: 2023/09/21 16:04:39 by gbricot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "phonebook.hpp"
 
@@ -39,7 +50,6 @@ void	PhoneBook::ft_add( void )
 	while (i < 5)
 	{
 		res = ft_get_input(name[i]);
-		usleep (ft_rand());
 		this->data[this->i].infos[i++].assign(res);
 		res.clear();
 	}
@@ -82,7 +92,6 @@ void	PhoneBook::ft_search( void )
 		i++;
 	}
 	std::cout << std::endl << "Wich index do you want to print ? ";
-	usleep (ft_rand());
 	std::getline(std::cin, str);
 	while (str.length() != 1 || ((str.at(0) - 48) >= i) || ((str.at(0) - 48) < 0))
 	{

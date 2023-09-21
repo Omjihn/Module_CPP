@@ -1,17 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gbricot <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/21 16:06:06 by gbricot           #+#    #+#              #
+#    Updated: 2023/09/21 16:13:12 by gbricot          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME =		Bank_recover
 
 CC = 		c++
 
-//CFLAGS =	-Wall -Wextra -Werror 
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRC =		tests.cpp \
-			Account.cpp
+		Account.cpp
 
 OBJ =		$(SRC:.cpp=.o)
 
 $(NAME):	$(OBJ)
-			$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
