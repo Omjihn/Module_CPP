@@ -6,14 +6,13 @@
 /*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:05:52 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/21 16:10:55 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/22 17:12:38 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <ctime>
 #include <cstdio>
-#include <chrono>
 #include "Account.hpp"
 
 int Account::_nbAccounts = 0;
@@ -78,13 +77,13 @@ bool    Account::makeWithdrawal(int withdrawal)
     return (true);
 }
 
-int     Account::checkAmount( void ) const
+int     Account::checkAmount( void )	const
 {
     std::cout << "checkAmount triggered" << std::endl;
     return(0);
 }
 
-void    Account::displayStatus( void ) const
+void    Account::displayStatus( void )	const
 {
     _displayTimestamp();
     std::cout << "index:" <<  this->_accountIndex << ";amount:" << this->_amount\
@@ -94,14 +93,14 @@ void    Account::displayStatus( void ) const
 
 void    Account::_displayTimestamp( void )
 {
-	std::time_t currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	std::time_t currentTime = std::time(NULL);
 	std::tm* timeinfo = std::localtime(&currentTime);
-	char	str[16];
-	std::sprintf(str, "%04d%02d%02d_%02d%02d%02d", timeinfo->tm_year + 1900,
-	timeinfo->tm_mon + 1, timeinfo->tm_mday, timeinfo->tm_hour,
-	timeinfo->tm_min, timeinfo->tm_sec);
+	char str[16];
+	std::sprintf(str, "%04d%02d%02d_%02d%02d%02d",
+		timeinfo->tm_year + 1900, timeinfo->tm_mon + 1, timeinfo->tm_mday,
+		timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec);
 	std::cout << "[" << str << "] ";
-    //std::cout << "[19920104_091532] "; debug
+	//std::cout << "[19920104_091532] ";	debug
 }
 
 int     Account::getNbAccounts( void )
