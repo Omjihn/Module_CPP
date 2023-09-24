@@ -14,8 +14,16 @@
 
 int     main(void)
 {
-    Zombie *horde = zombieHorde(5, "Bosetti");
-
-    delete horde;
+    int nb_zombies = 5;
+    Zombie *horde = zombieHorde(nb_zombies, "Bosetti");
+    Zombie *horde_2 = zombieHorde(nb_zombies, "Josephine l'ange gardien");
+    int i = 0;
+    while (i < nb_zombies)
+    {
+        horde[i].announce();
+        horde_2[i++].announce();
+    }
+    delete[] horde_2;
+    delete[] horde;
     return (0);
 }
