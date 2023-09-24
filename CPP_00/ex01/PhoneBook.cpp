@@ -50,7 +50,7 @@ void	PhoneBook::ft_add( void )
 	while (i < 5)
 	{
 		res = ft_get_input(name[i]);
-		this->data[this->i].infos[i++].assign(res);
+		this->data[this->i].ft_add_info(i++, res);
 		res.clear();
 	}
 	std::cout << "Contact added" << std::endl;
@@ -79,7 +79,7 @@ void	PhoneBook::ft_search( void )
 		i = 0;
 		while (i < 5)
 		{
-		        std::cout << name[i] << ": " << this->data[0].infos[i] << std::endl;
+		        std::cout << name[i] << ": " << this->data[0].ft_get_info(i) << std::endl;
 		        usleep (ft_rand());
 		        i++;
 		}
@@ -88,7 +88,7 @@ void	PhoneBook::ft_search( void )
 	ft_print_header();
 	while (i < this->nb_data)
 	{
-		ft_print_infos(this->data[i].infos, i);
+		ft_print_infos(this->data[i].ft_get_all_infos(), i);
 		i++;
 	}
 	std::cout << std::endl << "Wich index do you want to print ? ";
@@ -103,7 +103,7 @@ void	PhoneBook::ft_search( void )
 	i = 0;
 	while (i < 5)
 	{
-	        std::cout << name[i] << ": " << this->data[str.at(0) - 48].infos[i] << std::endl;
+	        std::cout << name[i] << ": " << this->data[str.at(0) - 48].ft_get_info(i) << std::endl;
 	        usleep (ft_rand());
 	        i++;
 	}

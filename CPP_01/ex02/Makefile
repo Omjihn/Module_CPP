@@ -5,32 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbricot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/23 15:22:31 by gbricot           #+#    #+#              #
-#    Updated: 2023/09/23 17:02:01 by gbricot          ###   ########.fr        #
+#    Created: 2023/09/24 16:46:22 by gbricot           #+#    #+#              #
+#    Updated: 2023/09/24 17:27:28 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		Moar_brainz
+NAME =		HI_THIS_IS_BRAIN
 
-CC =		c++
+CPPFLAGS =	-Wall -Wextra -Werror
 
-CPPFLAGS =	-Wall -Wextra -Werror -g
+CC =		g++
 
-SRC =		main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
+SRC =		main.cpp
 
-OBJ	=		$(SRC:.cpp=.o)
+$(NAME):
+		$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
 
-$(NAME):	$(OBJ)
-			$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
-
-all:		$(NAME)
+all:
 
 clean:
-			rm -f $(OBJ)
+		rm -f $(NAME)
 
-fclean:		clean
-			rm -f $(NAME)
-
-re:			fclean $(NAME)
+re:		clean $(NAME)

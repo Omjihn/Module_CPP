@@ -6,7 +6,7 @@
 #    By: gbricot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 16:05:01 by gbricot           #+#    #+#              #
-#    Updated: 2023/09/21 16:05:05 by gbricot          ###   ########.fr        #
+#    Updated: 2023/09/24 18:21:25 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRC =		main.cpp \
 		PhoneBook.cpp \
+		Contact.cpp \
 		ft_print.cpp
 
 OBJ =		$(SRC:.cpp=.o)
