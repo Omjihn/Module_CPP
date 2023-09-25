@@ -24,6 +24,6 @@ $(NAME):
 all:
 
 clean:
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re:		clean $(NAME)
