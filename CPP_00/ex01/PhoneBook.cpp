@@ -53,7 +53,7 @@ void	PhoneBook::ft_add( void )
 		this->data[this->i].ft_add_info(i++, res);
 		res.clear();
 	}
-	std::cout << "Contact added" << std::endl;
+	std::cout << "Contact added" << std::endl << std::endl;
 	if (this->nb_data < 8)
 		this->nb_data++;
 	if (this->i == 7)

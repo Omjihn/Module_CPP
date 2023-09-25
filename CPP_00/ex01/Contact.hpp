@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include <iostream>
 
 class	Contact
 {
@@ -22,5 +22,6 @@ class	Contact
 		std::string	ft_get_info(int index);
 		
 	private:
+	
 		std::string	infos[5];
 };

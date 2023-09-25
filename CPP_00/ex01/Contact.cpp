@@ -12,19 +12,17 @@
 
 #include "Contact.hpp"
 
-void	ft_add_info(int index, std::string info)
+void	Contact::ft_add_info(int index, std::string info)
 {
-	infos[index].assign(info);
+	this->infos[index].assign(info);
 }
 
-std::string	ft_get_info(int index)
+std::string	Contact::ft_get_info(int index)
 {
-	if (infos[index])
-		return (infos[index]);
-	return (NULL);
+	return (this->infos[index]);
 }
 
-std::string	*ft_get_all_infos(void)
+std::string	*Contact::ft_get_all_infos(void)
 {
-	return (infos);
+	return (this->infos);
 }
