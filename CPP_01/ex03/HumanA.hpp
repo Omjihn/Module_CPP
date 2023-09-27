@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:28:05 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 17:11:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/27 18:35:21 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class   HumanA
 
     private:
 
-        Weapon  weapon;
+        Weapon  &weapon;
         std::string name;
 };
