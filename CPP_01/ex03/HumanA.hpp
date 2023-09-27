@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:28:05 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 18:35:21 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/27 20:22:04 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class   HumanA
 {
     public:
 
-        HumanA( std::string name, Weapon &weapon );
+        HumanA(std::string name, Weapon &weapon);
         void    attack( void );
 
     private:
 
-        Weapon  &weapon;
         std::string name;
+        Weapon  &weapon;
+        
 };

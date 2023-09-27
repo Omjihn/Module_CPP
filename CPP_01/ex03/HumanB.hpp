@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:28:12 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 19:35:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/27 20:32:33 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   HumanB
     public:
 
         HumanB( std::string name );
-        void    setWeapon( Weapon &weapon );
+        void    setWeapon(Weapon &weapon);
         void    attack( void );
 
     private:
