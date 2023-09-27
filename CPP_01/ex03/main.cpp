@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:12:46 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 18:33:59 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/27 21:11:21 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
     bob.attack();
     club.setType("some other type of club");
     bob.attack();
-    
+    std::cout << "-------------------------------------------------" << std::endl;
     Weapon club_2 = Weapon("crude spiked club");
     HumanB jim("Jim");
     jim.setWeapon(club_2);

@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:28:18 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 20:34:02 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/27 21:08:09 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void    Weapon::setType( std::string type )
 
 const std::string   Weapon::getType( void )
 {
-    return (this->type);
+    if (!this->type.length())
+        return ("fists");
+    return(this->type);
 }
