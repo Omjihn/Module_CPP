@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 13:20:54 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/28 15:17:04 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/28 15:32:27 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void    ft_create_output(char *av, std::ofstream &output_file)
 {
     std::string file_name(av);
     file_name.insert(file_name.length(), ".remplace");
-    output_file.open(file_name.c_str());
+    output_file.open(file_name.c_str(), std::ofstream::in | std::ofstream::trunc);
 }
 
 static void    ft_get_input_text(std::ofstream &input_file, std::string &file_content)
