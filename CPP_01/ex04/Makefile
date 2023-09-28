@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/28 12:56:22 by gbricot           #+#    #+#              #
-#    Updated: 2023/09/28 13:01:53 by gbricot          ###   ########.fr        #
+#    Updated: 2023/09/28 15:17:29 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ $(NAME): $(OBJ)
 all:	$(NAME)
 
 clean:
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 
-fclean	clean
-		rm -f $(NAME)
+fclean:	clean
+		@rm -f $(NAME)
 
 re: fclean $(NAME)
