@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:28:13 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/27 20:32:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/28 13:04:24 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 HumanB::HumanB( std::string name )
 {
     this->name = name;
-    this->weapon = nullptr;
+    this->weapon = NULL;
 }
 
 void    HumanB::setWeapon(Weapon &weapon)

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gbricot <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 15:22:31 by gbricot           #+#    #+#              #
-#    Updated: 2023/09/23 15:22:33 by gbricot          ###   ########.fr        #
+#    Updated: 2023/09/28 12:58:28 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =		BraiiiiiiinnnzzzZ
 
 CC =		c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -g
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
 SRC =		main.cpp \
 			Zombie.cpp \
