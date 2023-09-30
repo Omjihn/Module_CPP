@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:14:40 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/29 16:32:34 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/30 14:09:05 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 class   Harl
 {
+
     public:
 
         void    complain( std::string level );
@@ -21,6 +22,7 @@ class   Harl
 
     private:
 
+        typedef void(Harl::*func_array)();
         void    debug( void );
         void    info( void );
         void    warning( void );

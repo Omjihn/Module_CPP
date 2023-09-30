@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:14:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/29 16:59:23 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/30 14:09:09 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,23 @@
 
 void    Harl::complain( std::string level )
 {
-    (void) level;
-    debug();
+    Harl::func_array func_ptr[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string tab[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    
+    int i = 0;
+    while (i < 4)
+    {
+        if (!tab[i].compare(level))
+        {
+            (this->*func_ptr[i])();
+            return ;
+        }
+        i++;
+    }
+    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
+    
 
 void    Harl::debug( void )
 {

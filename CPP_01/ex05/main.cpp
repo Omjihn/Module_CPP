@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:14:58 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/29 15:41:10 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/09/30 14:03:49 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,9 @@ int main(void)
 {
     Harl    Bosetti;
 
-    Bosetti.complain("warning");
+    Bosetti.complain("WARNING");
+    Bosetti.complain("ERROR");
+    Bosetti.complain("INFO");
+    Bosetti.complain("DEBUG");
+    Bosetti.complain("");
 }
