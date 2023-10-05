@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:05:47 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/03 14:58:16 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/05 14:13:52 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,10 @@ std::ostream &operator<<(std::ostream &os, Fixed const &m)
 
 int main(void)
 {
-    std::cout << "a :" << std::endl;
     Fixed a;
-    std::cout << "b :" << std::endl;
     Fixed const b( 10 );
-    std::cout << "c :" << std::endl;
     Fixed const c( 42.42f );
-    std::cout << "d :" << std::endl;
     Fixed const d( b );
-    std::cout << "a :" << std::endl;
     a = Fixed( 1234.4321f );
     
     std::cout << "a is " << a << std::endl;
