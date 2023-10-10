@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/02 15:05:45 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/10 17:52:14 by gbricot          ###   ########.fr        #
+#    Created: 2023/10/05 14:20:10 by gbricot           #+#    #+#              #
+#    Updated: 2023/10/10 17:41:31 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		Fixed_float_value
+NAME =		Now_were_talking
 
 CC =		g++
 
