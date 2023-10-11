@@ -6,16 +6,11 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:05:47 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/05 14:13:52 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/11 16:02:38 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-std::ostream &operator<<(std::ostream &os, Fixed const &m)
-{ 
-    return os << m.toFloat();
-}
 
 int main(void)
 {
