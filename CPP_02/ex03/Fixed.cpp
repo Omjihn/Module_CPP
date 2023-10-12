@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:57:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/11 18:57:19 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/12 17:06:41 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 Fixed::Fixed( void )
 {
-    std::cout << "Default constructor called" << std::endl;
+    //std::cout << "[Fixed] Default constructor called" << std::endl;
     fix_val = 0;
 }
 
 Fixed::Fixed( const int val )
 {
-    std::cout << "Int constructor called" << std::endl;
+    //std::cout << "[Fixed] Int constructor called" << std::endl;
     fix_val = val << fract_bit_nb;
 }
 
 Fixed::Fixed( const float val )
 {
-    std::cout << "Float constructor called" << std::endl;
+    //std::cout << "[Fixed] Float constructor called" << std::endl;
     fix_val = roundf(val * (1 << fract_bit_nb));
 }
 
 Fixed::Fixed( const Fixed &val )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "[Fixed] Copy constructor called" << std::endl;
     this->fix_val = val.fix_val;
 }
 
 Fixed   &Fixed::operator=( const Fixed &val )
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    //std::cout << "[Fixed] Copy assignment operator called" << std::endl;
     this->fix_val = val.toFloat();
     return (*this);
 }
@@ -49,52 +49,52 @@ std::ostream &operator<<( std::ostream &output, const Fixed &val )
     return (output);
 }
 
-bool    Fixed::operator>(const Fixed &val)
+bool    Fixed::operator>(const Fixed &val) const
 {
     return (this->toFloat() > val.toFloat());
 }
 
-bool    Fixed::operator<(const Fixed &val)
+bool    Fixed::operator<(const Fixed &val) const
 {
     return (this->toFloat() < val.toFloat());
 }
 
-bool    Fixed::operator>=(const Fixed &val)
+bool    Fixed::operator>=(const Fixed &val) const
 {
     return (this->toFloat() >= val.toFloat());
 }
 
-bool    Fixed::operator<=(const Fixed &val)
+bool    Fixed::operator<=(const Fixed &val) const
 {
     return (this->toFloat() <= val.toFloat());
 }
 
-bool    Fixed::operator==(const Fixed &val)
+bool    Fixed::operator==(const Fixed &val) const
 {
     return (this->toFloat() == val.toFloat());
 }
 
-bool    Fixed::operator!=(const Fixed &val)
+bool    Fixed::operator!=(const Fixed &val) const
 {
     return (this->toFloat() != val.toFloat());
 }
 
-float   Fixed::operator*(const Fixed &val)
+float   Fixed::operator*(const Fixed &val) const
 {
     return (this->toFloat() * val.toFloat());
 }
 
-float   Fixed::operator+(const Fixed &val)
+float   Fixed::operator+(const Fixed &val) const
 {
     return (this->toFloat() + val.toFloat());
 }
 
-float   Fixed::operator-(const Fixed &val)
+float   Fixed::operator-(const Fixed &val) const
 {
     return (this->toFloat() - val.toFloat());
 }
 
-float   Fixed::operator/(const Fixed &val)
+float   Fixed::operator/(const Fixed &val) const
 {
     return (this->toFloat() / val.toFloat());
 }
@@ -149,7 +149,7 @@ Fixed   &Fixed::max(Fixed &arg_1, Fixed &arg_2)
 
 Fixed::~Fixed( void )
 {
-    std::cout << "Destructor called" << std::endl;
+    //std::cout << "[Fixed] Destructor called" << std::endl;
 }
 
 float   Fixed::toFloat( void ) const

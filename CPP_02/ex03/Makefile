@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 18:53:46 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/11 18:54:38 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/12 13:13:30 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =		BSP
 
 CC =		g++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -g
 
 SRC =		main.cpp \
 			Fixed.cpp \

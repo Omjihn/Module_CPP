@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:41 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/11 18:56:54 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/12 14:00:17 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ class   Fixed
         
         friend std::ostream & operator<<( std::ostream &output, const Fixed &val );
 
-        bool    operator>( const Fixed &val );
-        bool    operator<( const Fixed &val );
-        bool    operator>=( const Fixed &val );
-        bool    operator<=( const Fixed &val );
-        bool    operator==( const Fixed &val );
-        bool    operator!=( const Fixed &val );
+        bool    operator>( const Fixed &val ) const;
+        bool    operator<( const Fixed &val ) const;
+        bool    operator>=( const Fixed &val ) const;
+        bool    operator<=( const Fixed &val ) const;
+        bool    operator==( const Fixed &val ) const;
+        bool    operator!=( const Fixed &val ) const;
 
-        float   operator*( const Fixed &val );
-        float   operator+( const Fixed &val );
-        float   operator-( const Fixed &val );
-        float   operator/( const Fixed &val );
+        float   operator*( const Fixed &val ) const;
+        float   operator+( const Fixed &val ) const;
+        float   operator-( const Fixed &val ) const;
+        float   operator/( const Fixed &val ) const;
 
         float   operator++(int);
         float   operator++();
