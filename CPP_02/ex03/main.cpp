@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:54:56 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/14 20:32:47 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/14 20:42:31 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int main(void)
     ft_test_case(Point(0, 0), Point(10, 30), Point(20, 0), Point(30, 15));
     
     /*              Create yours own tests                           */
-    ft_test_case(Point(0, 0), Point(50, 150), Point(200, -70), Point(100, -12));
+    //ft_test_case(Point(0, 0), Point(50, 150), Point(200, -70), Point(100, -12));
 
-    //std::cout << std::endl << "More details : " << "https://planetcalc.com/8108/" << std::endl;
     return (0);
 }

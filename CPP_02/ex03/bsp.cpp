@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:58:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/14 20:41:06 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/14 20:44:52 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static Fixed   ft_get_side( Point const &v_start, Point const &v_end, Point cons
 
 bool    bsp( Point const &a, Point const &b, Point const &c, Point const &p )
 {
-    std::cout << "\033[0;37mTriangle coords :" << std::endl << std::endl;
+    std::cout << std::endl << "\033[0;37mTriangle coords :" << std::endl << std::endl;
     std::cout << "a.x = " << a.get_fix_x() << " | a.y = " << a.get_fix_y() << std::endl;
     std::cout << "b.x = " << b.get_fix_x() << " | b.y = " << b.get_fix_y() << std::endl;
     std::cout << "c.x = " << c.get_fix_x() << " | c.y = " << c.get_fix_y() << std::endl << std::endl;
-    std::cout << "Is that point is inside the triangle ?" << std::endl << std::endl;
+    std::cout << "Is the point inside the triangle ?" << std::endl << std::endl;
     std::cout << "p.x = " << p.get_fix_x() << " | p.y = " << p.get_fix_y() << std::endl << std::endl;
 
     Fixed res_1(ft_get_side(a, b, p));
