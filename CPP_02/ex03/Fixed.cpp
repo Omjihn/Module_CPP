@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:57:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/12 17:06:41 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/13 12:46:03 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,24 +79,24 @@ bool    Fixed::operator!=(const Fixed &val) const
     return (this->toFloat() != val.toFloat());
 }
 
-float   Fixed::operator*(const Fixed &val) const
+Fixed   Fixed::operator*(const Fixed &val) const
 {
-    return (this->toFloat() * val.toFloat());
+    return Fixed(this->toFloat() * val.toFloat());
 }
 
-float   Fixed::operator+(const Fixed &val) const
+Fixed   Fixed::operator+(const Fixed &val) const
 {
-    return (this->toFloat() + val.toFloat());
+    return Fixed(this->toFloat() + val.toFloat());
 }
 
-float   Fixed::operator-(const Fixed &val) const
+Fixed   Fixed::operator-(const Fixed &val) const
 {
-    return (this->toFloat() - val.toFloat());
+    return Fixed(this->toFloat() - val.toFloat());
 }
 
-float   Fixed::operator/(const Fixed &val) const
+Fixed   Fixed::operator/(const Fixed &val) const
 {
-    return (this->toFloat() / val.toFloat());
+    return Fixed(this->toFloat() / val.toFloat());
 }
 
 float   Fixed::operator++(int)

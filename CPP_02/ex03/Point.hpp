@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:57:46 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/12 13:56:22 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:34:18 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class   Point
 
         const Fixed   &get_fix_x( void ) const;
         const Fixed   &get_fix_y( void ) const;
-
 
     private:
 
