@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:59 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 13:42:32 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:54:24 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void    ClapTrap::attack( const std::string &target )
 
 void    ClapTrap::takeDamage( unsigned int amount )
 {
-    if (hit_point <= 0)
+    if (hit_point == 0)
     {
         std::cout << "ClapTrap " << this->name << " is already dying on the ground but it's getting attacked, hard life :/" << std::endl;
         return ;
