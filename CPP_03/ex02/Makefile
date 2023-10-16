@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 11:22:08 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/16 14:11:22 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/16 15:00:35 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =		Frag_Trap
 
 CC =		g++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -Wshadow
 
 SRC =		main.cpp \
 			ClapTrap.cpp \

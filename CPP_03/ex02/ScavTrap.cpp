@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:25:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 14:27:48 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:53:03 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap()
     ft_set_attack_dmg(20);
 }
 
-ScavTrap::ScavTrap( const std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( const std::string input_name ) : ClapTrap(input_name)
 {
     std::cout << "[ScavTrap] String constructor called" << std::endl;
     ft_set_hit_point(100);

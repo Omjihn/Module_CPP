@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:59 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 13:54:24 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:52:23 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap( void ) : name("ClapTrap")
     this->attack_dmg = 0;
 }
 
-ClapTrap::ClapTrap( const std::string name ) : name(name)
+ClapTrap::ClapTrap( const std::string input_name ) : name(input_name)
 {
     std::cout << "[ClapTrap] String constructor called" << std::endl;
     this->hit_point = 10;

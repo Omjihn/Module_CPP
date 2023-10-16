@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:54 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 13:20:28 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:55:36 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class   ClapTrap
     public:
 
         ClapTrap( void );
-        ClapTrap( const std::string name );
+        ClapTrap( const std::string input_name );
         ~ClapTrap();
 
         void  attack( const std::string &target );

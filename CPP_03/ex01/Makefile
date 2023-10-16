@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 11:22:08 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/16 14:10:41 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/16 15:00:44 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =		Scav_Trap
 
 CC =		g++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -Wshadow
 
 SRC =		main.cpp \
 			ClapTrap.cpp \

@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:09:22 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 14:30:37 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:53:34 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap( void ) : ClapTrap("FragTrap")
     ft_set_attack_dmg(30);
 }
 
-FragTrap::FragTrap( const std::string name ) : ClapTrap(name)
+FragTrap::FragTrap( const std::string input_name ) : ClapTrap(input_name)
 {
     std::cout << "[FragTrap] Default constructor called" << std::endl;
     ft_set_hit_point(100);
