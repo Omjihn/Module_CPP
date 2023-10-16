@@ -6,11 +6,11 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 11:22:08 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/16 11:22:45 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/16 14:10:41 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		Serana
+NAME =		Scav_Trap
 
 CC =		g++
 
