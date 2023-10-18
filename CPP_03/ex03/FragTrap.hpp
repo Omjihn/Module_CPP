@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:09:24 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 17:36:45 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/18 18:01:43 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #ifndef FRAG_TRAP
 # define FRAG_TRAP
 
-class   FragTrap : public ClapTrap
+class   FragTrap : virtual public ClapTrap
 {
     public:
 

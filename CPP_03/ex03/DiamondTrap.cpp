@@ -6,27 +6,27 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:49:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 18:50:49 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/18 19:02:27 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ) : name("DiamondTrap") 
+DiamondTrap::DiamondTrap( void ) : ClapTrap("DiamondTrap_clap_name"), name("DiamondTrap")
 {
     std::cout << "[DiamondTrap] Default constructor called" << std::endl;
-    ft_set_hit_point(FragTrap::ft_get_hit_point());
-    ft_set_energy_point(ScavTrap::ft_get_energy_point());
-    ft_set_attack_dmg(FragTrap::ft_get_attack_dmg());
+    ft_set_hit_point(100);
+    ft_set_energy_point(50);
+    ft_set_attack_dmg(30);
 }
 
-DiamondTrap::DiamondTrap( const std::string input_name ) : name(input_name) 
+DiamondTrap::DiamondTrap( std::string input_name ) : ClapTrap(input_name.insert(input_name.size(), "_clap_name")), name(input_name.erase(input_name.size() - 10, 10))
 {
     std::cout << "[DiamondTrap] String constructor called" << std::endl;
-    ft_set_hit_point(FragTrap::ft_get_hit_point());
-    ft_set_energy_point(ScavTrap::ft_get_energy_point());
-    ft_set_attack_dmg(FragTrap::ft_get_attack_dmg());
+    ft_set_hit_point(100);
+    ft_set_energy_point(50);
+    ft_set_attack_dmg(30);
 }
 
 DiamondTrap::~DiamondTrap()
@@ -34,3 +34,14 @@ DiamondTrap::~DiamondTrap()
     std::cout << "[DiamondTrap] Destructor called" << std::endl;
 }
 
+void    DiamondTrap::whoAmI( void )
+{
+    std::cout << "[DiamondTrap] DiamondTrap name: " << this->name << std::endl;
+    std::cout << "[DiamondTrap] ClapTrap name: " << ft_get_name() << std::endl;
+}
+
+std::string   ft_get_name_diamond( void )
+{
+    //return (this->name); dont work idk why
+    return ("just for test");
+}

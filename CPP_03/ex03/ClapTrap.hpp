@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:54 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 15:04:23 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/18 18:25:29 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class   ClapTrap
         unsigned int  ft_get_attack_dmg( void );
 
         void  ft_set_hit_point( unsigned int nb );
-        void  ft_set_energy_point( unsigned int nb);
-        void  ft_set_attack_dmg( unsigned int nb);
+        void  ft_set_energy_point( unsigned int nb );
+        void  ft_set_attack_dmg( unsigned int nb );
 
     private:
 

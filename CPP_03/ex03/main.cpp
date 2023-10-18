@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 15:05:49 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/18 19:04:35 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
+
 int main(void)
 {
-    FragTrap    ft("Sirene");
+    DiamondTrap    ft("Sirene");
     ScavTrap    st("Etalon du cul");
     ClapTrap    ct;
 
+    ft.whoAmI();
     ft.highFivesGuys();
     while (ct.ft_get_energy_point() - 2)
         ct.beRepaired(3);

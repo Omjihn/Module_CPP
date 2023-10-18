@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:24:52 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 17:36:21 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/18 18:01:47 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #ifndef SCAV_TRAP
 # define SCAV_TRAP
 
-class   ScavTrap : public ClapTrap
+class   ScavTrap : virtual public ClapTrap
 {
     public:
 
