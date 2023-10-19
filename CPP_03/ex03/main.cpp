@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/19 11:14:16 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:21:09 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
     std::cout << "-------------------------------------" << std::endl;
     DiamondTrap    ft("Sirene");
     std::cout << "-------------------------------------" << std::endl;
-    ScavTrap    st("Etalon du cul");
+    ScavTrap    st("Handsome Jack");
     std::cout << "-------------------------------------" << std::endl;
     ClapTrap    ct;
     std::cout << "-------------------------------------" << std::endl;

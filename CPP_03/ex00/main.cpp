@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 11:11:45 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:20:53 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    ClapTrap    test("Etalon du cul");
+    ClapTrap    test("Handsome Jack");
 
     test.attack("Brick");
     test.takeDamage(5);

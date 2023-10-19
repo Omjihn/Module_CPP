@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 14:39:30 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:21:06 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void)
 {
     FragTrap    ft("Sirene");
-    ScavTrap    st("Etalon du cul");
+    ScavTrap    st("Handsome Jack");
     ClapTrap    ct;
 
     ft.highFivesGuys();

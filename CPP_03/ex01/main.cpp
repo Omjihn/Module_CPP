@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 13:52:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:21:02 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    ScavTrap    st("Etalon du cul");
+    ScavTrap    st("Handsome Jack");
     ClapTrap    ct;
 
     while (ct.ft_get_energy_point() - 2)
