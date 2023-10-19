@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 14:49:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/18 19:02:27 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:16:30 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ void    DiamondTrap::whoAmI( void )
     std::cout << "[DiamondTrap] ClapTrap name: " << ft_get_name() << std::endl;
 }
 
-std::string   ft_get_name_diamond( void )
+const std::string   DiamondTrap::ft_get_name_diamond( void )
 {
-    //return (this->name); dont work idk why
-    return ("just for test");
+    return (name);
 }

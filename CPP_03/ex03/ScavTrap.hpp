@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:24:52 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/18 18:01:47 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:08:28 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class   ScavTrap : virtual public ClapTrap
 {
     public:
 
-      ScavTrap( void );
-      ScavTrap( const std::string input_name );
-      ~ScavTrap();
+        ScavTrap( void );
+        ScavTrap( const std::string input_name );
+        ~ScavTrap();
 
       void    guardGate( void );
 };
