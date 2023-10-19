@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/19 11:21:09 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/19 11:34:12 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int main(void)
     while (ft.ft_get_hit_point())
     {
         ft.attack(st.ft_get_name());
-        st.takeDamage(st.ft_get_attack_dmg());
+        st.takeDamage(ft.ft_get_attack_dmg());
         st.attack(ft.ft_get_name_diamond());
-        ft.takeDamage(ft.ft_get_attack_dmg());
+        ft.takeDamage(st.ft_get_attack_dmg());
     }
     ft.highFivesGuys();
     ct.attack(st.ft_get_name());
