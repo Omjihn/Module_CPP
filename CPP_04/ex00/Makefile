@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 15:16:08 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/27 13:48:22 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/27 17:14:58 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ GREEN = "\033[0;32m"
 
 TOTAL = $(words $(SRC))
 COUNT = 0
+
+ERROR_LOG = /tmp/error_log.txt
 
 define colorecho
 	@tput civis
@@ -63,7 +65,8 @@ $(NAME): $(OBJ)
 		echo -n "-"; \
 	done
 	@echo -n "] $(shell echo $$(($(COUNT) * 100 / $(TOTAL))))%    "
-	@$(CC) $(CPPFLAGS) -c $< -o $@ 2>/dev/null && echo -n "\r"
+	@$(CC) $(CPPFLAGS) -c $< -o $@ 2>$(ERROR_LOG) || (cat $(ERROR_LOG) && rm -f $(ERROR_LOG) && exit 1)
+	@echo -n "\r"
 
 regular:
 		@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
