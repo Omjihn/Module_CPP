@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:18:25 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 13:34:20 by gbricot          ###   ########.fr       */
+/*   Created: 2023/10/27 13:33:41 by gbricot           #+#    #+#             */
+/*   Updated: 2023/10/27 13:34:03 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef WRONGCAT_HPP
+ #define WRONGCAT_HPP
 
-Cat::Cat( void ) : Animal("Cat")
-{
-    std::cout << "[Cat] Default constructor called" << std::endl;
-}
+# include "WrongAnimal.hpp"
 
-Cat::~Cat()
+class   WrongCat : public WrongAnimal
 {
-    std::cout << "[Cat] Destructor called" << std::endl;
-}
+    public:
+
+        WrongCat( void );
+        ~WrongCat();
+};
+
+#endif
