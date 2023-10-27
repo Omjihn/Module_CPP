@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:30:16 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 13:30:56 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/27 14:55:25 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   WrongAnimal
         
         WrongAnimal( void );
         WrongAnimal( const std::string animal_type );
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
 
         void    makeSound( void ) const;
         const   std::string getType( void ) const ;

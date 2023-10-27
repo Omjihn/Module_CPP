@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:33:41 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 13:34:03 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/27 14:58:44 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
  #define WRONGCAT_HPP
 
 # include "WrongAnimal.hpp"
+# include "Brain.hpp"
 
 class   WrongCat : public WrongAnimal
 {
@@ -21,6 +22,10 @@ class   WrongCat : public WrongAnimal
 
         WrongCat( void );
         ~WrongCat();
+
+    private:
+
+        Brain   *brain;
 };
 
 #endif
