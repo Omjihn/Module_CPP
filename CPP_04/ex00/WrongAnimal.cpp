@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:31:32 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 13:32:58 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/27 14:02:25 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ WrongAnimal::~WrongAnimal()
 
 void    WrongAnimal::makeSound( void ) const
 {
-    if (!this->type.size())
-        std::cout << "WrongGrwomiafrou ❓" << std::endl;
-    else if (!this->type.compare("Dog"))
+    if (!this->type.compare("Dog"))
         std::cout << "WrongWouf 🐶" << std::endl;
     else if (!this->type.compare("Cat"))
         std::cout << "WrongMeoww 🐱" << std::endl;
+    else
+        std::cout << "WrongGrwomiafrou ❓" << std::endl;
 }
 
 const std::string   WrongAnimal::getType( void ) const
