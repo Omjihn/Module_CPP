@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:18:46 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 14:57:12 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/28 18:34:36 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@ class   Animal
         Animal( const std::string animal_type );
         virtual ~Animal();
 
-        void    makeSound( void ) const;
+        Animal  &operator=( const Animal *val );
+
+        void    makeSound( void ) const ;
         const   std::string getType( void ) const ;
 
     protected:
 
-        const std::string type;
+        std::string type;
 };
 
 #endif
