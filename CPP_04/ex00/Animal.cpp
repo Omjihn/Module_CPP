@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:33:12 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/28 09:07:52 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/28 13:47:18 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void    Animal::makeSound( void ) const
 
 const std::string   Animal::getType( void ) const
 {
-    if (!this->type.size())
-        return ("Random animal");
+    if (this->type.empty())
+        return ("Random cute animal");
     return (this->type);
 }
