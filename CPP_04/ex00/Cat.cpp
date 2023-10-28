@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:18:25 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 13:34:20 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/28 09:24:12 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,9 @@ Cat::Cat( void ) : Animal("Cat")
 Cat::~Cat()
 {
     std::cout << "[Cat] Destructor called" << std::endl;
+}
+
+void    Cat::makeSound( void ) const
+{
+    std::cout << "Meoww  🐱" << std::endl;
 }
