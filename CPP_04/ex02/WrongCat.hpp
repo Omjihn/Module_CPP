@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:33:41 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 14:58:44 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/29 17:02:39 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class   WrongCat : public WrongAnimal
 
         WrongCat( void );
         ~WrongCat();
+
+        void    makeSound( void ) const;
 
     private:
 

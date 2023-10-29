@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:27:39 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/27 14:58:39 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/29 15:56:02 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class   Dog : public Animal
 
         Dog( void );
         ~Dog();
+
+        void    makeSound( void ) const;
 
     private:
 

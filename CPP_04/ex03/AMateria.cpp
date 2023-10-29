@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:18:23 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/29 15:55:49 by gbricot          ###   ########.fr       */
+/*   Created: 2023/10/29 17:37:38 by gbricot           #+#    #+#             */
+/*   Updated: 2023/10/29 17:39:27 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "AMateria.hpp"
 
-Dog::Dog( void ) : Animal("Dog")
+AMateria::AMateria( void )
 {
-    std::cout << "[Dog] Default constructor called" << std::endl;
-    this->brain = new Brain();
+    std::cout < "[AMateria] Default constructor called" << std::endl;
 }
 
-Dog::~Dog()
+AMateria::AMateria( std::string const &type )
 {
-    std::cout << "[Dog] Destructor called" << std::endl;
-    delete this->brain;
-}
-
-void    Dog::makeSound( void ) const
-{
-    std::cout << "Wouf 🐶" << std::endl;
+    std::cout < "[AMateria] String constructor called" << std::endl;
 }

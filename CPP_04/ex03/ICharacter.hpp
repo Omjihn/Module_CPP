@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:18:23 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/29 15:55:49 by gbricot          ###   ########.fr       */
+/*   Created: 2023/10/29 18:09:20 by gbricot           #+#    #+#             */
+/*   Updated: 2023/10/29 18:09:43 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-
-Dog::Dog( void ) : Animal("Dog")
+class ICharacter
 {
-    std::cout << "[Dog] Default constructor called" << std::endl;
-    this->brain = new Brain();
-}
+    public:
 
-Dog::~Dog()
-{
-    std::cout << "[Dog] Destructor called" << std::endl;
-    delete this->brain;
-}
-
-void    Dog::makeSound( void ) const
-{
-    std::cout << "Wouf 🐶" << std::endl;
-}
+        virtual ~ICharacter() {}
+        virtual std::string const & getName() const = 0;
+        virtual void equip(AMateria* m) = 0;
+        virtual void unequip(int idx) = 0;
+        virtual void use(int idx, ICharacter& target) = 0;
+};

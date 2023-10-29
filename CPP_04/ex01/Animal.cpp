@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:33:12 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/28 18:28:17 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/10/29 16:17:14 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Animal::~Animal()
     std::cout << "[Animal] Destructor called" << std::endl;
 }
 
-Animal  &Animal::operator=( const Animal *val )
+Animal  &Animal::operator=( const Animal &val )
 {
     std::cout << "[Animal] Copy assignment operator called" << std::endl;
-    this->type = val->getType();
+    this->type = val.getType();
     return *this;
 }
 
