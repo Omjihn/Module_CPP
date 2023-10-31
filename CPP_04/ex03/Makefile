@@ -6,18 +6,22 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 17:17:29 by gbricot           #+#    #+#              #
-#    Updated: 2023/10/27 17:18:29 by gbricot          ###   ########.fr        #
+#    Updated: 2023/10/31 15:59:13 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Interface_&_recap
+NAME = Interface_recap
 
 CC = g++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow
 
 SRC = 		main.cpp \
-			
+			AMateria.cpp \
+			Character.cpp \
+			Cure.cpp \
+			Ice.cpp \
+			MateriaSource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

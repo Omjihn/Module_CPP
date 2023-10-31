@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 18:09:20 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:53:48 by gbricot          ###   ########.fr       */
+/*   Created: 2023/10/31 14:23:11 by gbricot           #+#    #+#             */
+/*   Updated: 2023/10/31 15:12:07 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
- #define ICHARACTER_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include "AMateria.hpp"
-
-class   ICharacter
+Cure::Cure( void ) : type("cure")
 {
-    public:
+    std::cout << "[Cure] Default constructor called" << std::endl;
+}
 
-        virtual ~ICharacter() {};
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
-};
+Cure::~Cure()
+{
+    std::cout << "[Cure] Destructor called" << std::endl;
+}
 
-#endif
+void    Cure::use( ICharacter &target)
+{
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+}

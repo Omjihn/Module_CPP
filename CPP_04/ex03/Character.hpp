@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 18:09:20 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:53:48 by gbricot          ###   ########.fr       */
+/*   Created: 2023/10/31 12:47:02 by gbricot           #+#    #+#             */
+/*   Updated: 2023/10/31 15:56:15 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
- #define ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include "AMateria.hpp"
 
-class   ICharacter
+class   Character : public ICharacter
 {
     public:
 
-        virtual ~ICharacter() {};
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
+        Character( void );
+        Character( const std::string input_name );
+        ~Character();
+
+    protected:
+
+        const std::string   name;
+        AMateria    *materia[4];
 };
 
 #endif
