@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:20:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/02 15:28:07 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 18:19:28 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ int main()
 
     ICharacter* Ganon = new Character("Ganon");
     ICharacter* Link = new Character("Link");
+    ICharacter* Random = new Character();
+
+    Character   *to_copy = new Character("Oui");
+    Character   *copy = to_copy;
+
+    delete  to_copy;
+    (void) copy;
+
+    std::cout << HIGHLIGHT << "If unnamed Character name is :" << Random->getName() << "." << WHITE << std::endl;
 
     AMateria* tmp;
     tmp = SheikaSlate->createMateria("ice");
@@ -62,7 +71,7 @@ int main()
     Ganon->equip(tmp);
     Ganon->equip(tmp);
     Ganon->equip(tmp);
-    std::cout << HIGHLIGHT << '\r';
+    std::cout << HIGHLIGHT;
     Ganon->equip(tmp);      // He already have 4 materias 
     std::cout << WHITE;
     Ganon->use(2, *Link);
@@ -85,9 +94,17 @@ int main()
     tmp = SheikaSlate->createMateria("test");
     std::cout << WHITE;
 
+    tmp = SheikaSlate->createMateria("ice");
+    
+    AMateria* tmp_2 = tmp->clone();
+    if (tmp != tmp_2)       // Testing if clone returns a different Materia
+        std::cout << HIGHLIGHT << "Clone is creating a new Ice." << WHITE << std::endl;
+
+    delete tmp_2;
     delete Ganon;
     delete Link;
     delete SheikaSlate;
+    delete Random;
 
     return 0;
 }*/

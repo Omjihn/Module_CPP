@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:22:24 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/02 14:27:21 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 17:41:42 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class AMateria
         const std::string &getType( void ) const; //Returns the materia type
         virtual AMateria* clone( void ) const = 0;
         virtual void use(ICharacter &target);
-
-        AMateria    *operator=( AMateria &mat );
 
     protected:
 

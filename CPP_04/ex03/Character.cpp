@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:40:39 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/02 14:13:47 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 18:08:11 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,38 @@ Character::Character( const std::string input_name ) : name(input_name)
         this->materia[i] = NULL;
 }
 
+Character::Character( Character &copy ) : name(copy.getName())
+{
+    std::cout << "[Character] Copy constructor called" << std::endl;
+    /*for (int i = 0; i < 4; i++)
+    {
+        if (copy.materia[i])
+            this->materia[i] = copy.materia[i]->clone();
+        else
+            this->materia[i] = NULL;
+    }*/
+    for (int i = 0; i < 4; i++) {
+            if (copy.materia[i]) {
+                this->materia[i] = copy.materia[i]->clone();
+            } else {
+                this->materia[i] = NULL;
+            }
+        }
+}
+
+
+
 Character::~Character()
 {
     std::cout << "[Character] Destructor called" << std::endl;
+}
+
+Character   &Character::operator=( const Character &val )
+{
+    std::cout << "[Character] Copy assignment constructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        this->materia[i] = val.materia[i];
+    return (*this);
 }
 
 const std::string   &Character::getName( void ) const
