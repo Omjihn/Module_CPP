@@ -6,30 +6,32 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:22:24 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:58:33 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 14:27:21 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
- #define AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
-# include "Character.hpp"
+
+# include "ICharacter.hpp"
 
 class AMateria
 {
     public:
     
-        AMateria( void );
-        AMateria(std::string const &type);
-        std::string const & getType() const; //Returns the materia type
-        virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+        virtual ~AMateria();
+        const std::string &getType( void ) const; //Returns the materia type
+        virtual AMateria* clone( void ) const = 0;
+        virtual void use(ICharacter &target);
+
+        AMateria    *operator=( AMateria &mat );
 
     protected:
 
-        virtual ~AMateria();
-
+        AMateria( void );
+        AMateria(std::string const &input_type);
         const std::string   type;
 };
 

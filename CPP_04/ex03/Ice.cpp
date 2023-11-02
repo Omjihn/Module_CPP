@@ -6,13 +6,13 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 14:20:22 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:11:59 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 11:22:15 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice( void ) : type("ice")
+Ice::Ice( void ) : AMateria("ice")
 {
     std::cout << "[Ice] Default constructor called" << std::endl;
 }
@@ -22,7 +22,10 @@ Ice::~Ice()
     std::cout << "[Ice] Destructor called" << std::endl;
 }
 
-
+AMateria    *Ice::clone( void ) const
+{
+    return (new Ice());
+}
 
 void    Ice::use( ICharacter &target)
 {

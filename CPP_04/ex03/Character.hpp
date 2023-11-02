@@ -6,14 +6,15 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:47:02 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:56:15 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 13:52:37 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 # include <iostream>
+# include "ICharacter.hpp"
 # include "AMateria.hpp"
 
 class   Character : public ICharacter
@@ -23,6 +24,11 @@ class   Character : public ICharacter
         Character( void );
         Character( const std::string input_name );
         ~Character();
+
+        const   std::string &getName() const;
+        void    equip(AMateria *m);
+        void    unequip(int idx);
+        void    use(int idx, ICharacter &target);
 
     protected:
 

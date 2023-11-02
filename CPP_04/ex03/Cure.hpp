@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:51:10 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:57:12 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 12:07:14 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CURE_HPP
 
 # include "AMateria.hpp"
-# include "Character.hpp"
 
 class   Cure : public AMateria
 {

@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 17:37:38 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:41:23 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 11:26:40 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 AMateria::AMateria( void )
 {
-    std::cout < "[AMateria] Default constructor called" << std::endl;
+    std::cout << "[AMateria] Default constructor called" << std::endl;
 }
 
-AMateria::AMateria( std::string const &type )
+AMateria::AMateria( std::string const &input_type ) : type(input_type)
 {
-    std::cout < "[AMateria] String constructor called" << std::endl;
+    std::cout << "[AMateria] String constructor called" << std::endl;
 }
 
 AMateria::~AMateria( void )
 {
-    std::cout < "[AMateria] Destructor called" << std::endl;
+    std::cout << "[AMateria] Destructor called" << std::endl;
 }
 
-const std::string   &getType( void ) const
+const std::string   &AMateria::getType( void ) const
 {
     return (this->type);
 }

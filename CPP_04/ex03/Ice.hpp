@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:50:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:54:46 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 12:07:32 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ICE_HPP
 
 # include "AMateria.hpp"
-# include "Character.hpp"
 
 class   Ice : public AMateria
 {
@@ -23,7 +22,7 @@ class   Ice : public AMateria
         Ice( void );
         ~Ice();
 
-        AMateria    *clone( void ) const;
+        AMateria* clone() const;
         void    use( ICharacter &target );
 };
 

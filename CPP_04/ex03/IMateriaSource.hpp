@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 10:31:50 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/31 15:54:06 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/02 12:06:42 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
  #define IMATERIASOURCE_HPP
 
 # include <iostream>
-# include "AMateria.hpp"
+
+class   AMateria;
 
 class IMateriaSource
 {
