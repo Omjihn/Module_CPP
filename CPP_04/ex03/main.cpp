@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:20:07 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/02 18:19:28 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/03 17:21:23 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 //  Subject main
 
-
+/*
 int main()
 {
     IMateriaSource* src = new MateriaSource();
@@ -41,10 +41,10 @@ int main()
     delete src;
     return 0;
 }
-
+*/
 // Custom main
 
-/*
+
 int main()
 {
     std::cout << WHITE;
@@ -56,11 +56,14 @@ int main()
     ICharacter* Link = new Character("Link");
     ICharacter* Random = new Character();
 
-    Character   *to_copy = new Character("Oui");
-    Character   *copy = to_copy;
-
-    delete  to_copy;
-    (void) copy;
+    Character test("oui");
+    std::cout << HIGHLIGHT;
+    Character test_2 = test;       //Copy constructor
+    std::cout << WHITE;
+    Character test_3;
+    std::cout << HIGHLIGHT;
+    test_3 = test;              //Copy assignment operator
+    std::cout << WHITE;
 
     std::cout << HIGHLIGHT << "If unnamed Character name is :" << Random->getName() << "." << WHITE << std::endl;
 
@@ -107,4 +110,4 @@ int main()
     delete Random;
 
     return 0;
-}*/
+}

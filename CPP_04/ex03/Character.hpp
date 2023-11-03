@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:47:02 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/02 18:05:57 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/03 17:01:40 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class   Character : public ICharacter
 
         Character( void );
         Character( const std::string input_name );
-        Character( Character &copy );
+        Character( const Character &copy );
         ~Character();
 
         const   std::string &getName() const;
