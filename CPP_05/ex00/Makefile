@@ -6,18 +6,19 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/17 14:48:11 by gbricot@stu       #+#    #+#              #
-#    Updated: 2023/11/17 15:58:09 by gbricot          ###   ########.fr        #
+#    Updated: 2023/11/21 14:23:37 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Polymorphism
+NAME = Bureaucrat
 
 CC = g++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 SRC = 		main.cpp \
-			Bureaucrat.cpp \
+			Bureaucrat.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 BLUE = "\033[0;36m"
