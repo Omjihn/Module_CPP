@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/17 14:48:11 by gbricot@stu       #+#    #+#              #
-#    Updated: 2023/11/21 14:23:37 by gbricot          ###   ########.fr        #
+#    Updated: 2023/11/22 15:00:42 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Bureaucrat
 
 CC = g++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow
 
 SRC = 		main.cpp \
 			Bureaucrat.cpp

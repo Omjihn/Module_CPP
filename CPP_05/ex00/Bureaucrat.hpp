@@ -6,61 +6,53 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:50:14 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/21 16:58:51 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/22 16:48:02 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <exception>
 
-class   GradeTooHighException : public std::exception
-{
-    public:
-
-        GradeTooHighException( void ) : message("Grade is too high\n") {}
-        ~GradeTooHighException( void ) {}
-        char    *what( void )
-        {
-            return (this->message.c_str());
-        }
-
-    private:
-
-        std::string message;
-};
-
-class   GradeTooLowException : public std::exception
-{
-    public:
-
-        GradeTooLowException( void ) : message("Grade is too low\n") {}
-        ~GradeTooLowException( void ) {}
-        char    *what( void )
-        {
-            return (this->message.c_str());
-        }
-
-    private:
-
-        std::string message;
-};
-
 class   Bureaucrat
 {
     public:
 
+        /*      CONSTRUCTORS/DESTRUCTOR    */
+
         Bureaucrat( void );
         Bureaucrat( const std::string input_name, int input_grade );
+        Bureaucrat( Bureaucrat &val );
         ~Bureaucrat();
-        
-        
-        
+
+        /*      EXCEPTIONS CLASSES      */
+
+        class   GradeTooHighException : public std::exception
+        {
+            public:
+
+                virtual const char* what( void ) const throw();
+        };
+
+        class   GradeTooLowException : public std::exception
+        {
+            public:
+
+                virtual const char* what( void ) const throw();
+        };
+
+        /*      MEMBERS FUNCTIONS       */
+
+        Bureaucrat & operator=( Bureaucrat &val );
+
         const std::string   getName( void );
-        unsigned char       getGrade( void );
+        int       getGrade( void );
+
+        void    increaseGrade( void );
+        void    decreaseGrade( void );
 
     private:
 
-        unsigned char       grade;
         const std::string   name;
+        int                 grade;
 
 };

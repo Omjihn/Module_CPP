@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:25:34 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/21 16:57:44 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/22 17:11:29 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,45 @@
 
 int main(void)
 {
+    /*      Dwight is better    */
+    
     try
-        Bureaucrat  Jean("Jean", 12);
+    {
+        Bureaucrat  Dwight("Dwight", 1);
+        Dwight.decreaseGrade();
+        Dwight.increaseGrade();
+        Dwight.increaseGrade();
+    }
     catch (std::exception & e)
     {
-        std::cout << "Exception encountered" << std::endl;
-        e.what();
+        std::cout << "Exception encountered : " << e.what() << std::endl;
+    }
+    
+    /*      Toby is bad (but we love him)   */
+    
+    try
+    {
+        Bureaucrat  Toby;
+        Toby.increaseGrade();
+        Toby.decreaseGrade();
+        Toby.decreaseGrade();
+    }
+    catch (std::exception & e)
+    {
+        std::cout << "Exception encountered : " << e.what() << std::endl;
+    }
+    
+    /*      Stanlay is copying Phyllis (to have more time to do some crosswords)    */
+    
+    try
+    {
+        Bureaucrat  Phyllis("Phyllis", 2);
+        Bureaucrat  Stanlay(Phyllis);
+        Stanlay.increaseGrade();
+        Stanlay.increaseGrade();
+    }
+    catch (std::exception & e)
+    {
+        std::cout << "Exception encountered : " << e.what() << std::endl;
     }
 }
