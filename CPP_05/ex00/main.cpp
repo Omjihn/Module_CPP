@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:25:34 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/22 17:11:29 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/23 13:40:19 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
     try
     {
         Bureaucrat  Dwight("Dwight", 1);
+        std::cout << Dwight;
         Dwight.decreaseGrade();
         Dwight.increaseGrade();
         Dwight.increaseGrade();
@@ -33,6 +34,7 @@ int main(void)
     try
     {
         Bureaucrat  Toby;
+        std::cout << Toby;
         Toby.increaseGrade();
         Toby.decreaseGrade();
         Toby.decreaseGrade();
@@ -47,7 +49,9 @@ int main(void)
     try
     {
         Bureaucrat  Phyllis("Phyllis", 2);
-        Bureaucrat  Stanlay(Phyllis);
+        std::cout << Phyllis;
+        Bureaucrat  Stanlay = Phyllis;
+        std::cout << Stanlay;
         Stanlay.increaseGrade();
         Stanlay.increaseGrade();
     }

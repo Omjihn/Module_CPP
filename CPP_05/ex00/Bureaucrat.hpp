@@ -6,11 +6,12 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:50:14 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/22 16:48:02 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/23 13:38:31 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ostream>
 #include <exception>
 
 class   Bureaucrat
@@ -43,6 +44,8 @@ class   Bureaucrat
         /*      MEMBERS FUNCTIONS       */
 
         Bureaucrat & operator=( Bureaucrat &val );
+        friend std::ostream & operator<<( std::ostream& os, Bureaucrat& val);
+
 
         const std::string   getName( void );
         int       getGrade( void );
