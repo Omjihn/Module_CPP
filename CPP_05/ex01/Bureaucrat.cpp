@@ -6,11 +6,12 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:25:37 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/23 15:14:52 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:26:02 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat( void ) : name("Unnamed_bureaucrat")
 {

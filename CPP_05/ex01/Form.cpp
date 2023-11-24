@@ -6,11 +6,12 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:58 by gbricot           #+#    #+#             */
-/*   Updated: 2023/11/23 15:13:24 by gbricot          ###   ########.fr       */
+/*   Updated: 2023/11/24 16:25:58 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form( void ) : name("Interesting form"), grade_s(75), grade_e(75)
 {

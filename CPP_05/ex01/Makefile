@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2023/11/23 15:21:34 by gbricot          ###   ########.fr        #
+#    Updated: 2023/11/24 16:23:03 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC = g++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow
 
-SRC =		Bureaucrat.cpp \
-			Form.cpp \
+SRC =		Form.cpp \
+			Bureaucrat.cpp \
 			main.cpp
 
 OBJ = $(SRC:.cpp=.o)
