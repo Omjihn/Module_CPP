@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/17 14:48:11 by gbricot@stu       #+#    #+#              #
-#    Updated: 2023/11/22 15:00:42 by gbricot          ###   ########.fr        #
+#    Updated: 2024/01/22 13:02:33 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ $(NAME): $(OBJ)
 	@for i in `seq 1 $$(($(TOTAL) - $(COUNT) * $(TOTAL) / $(TOTAL)))`; do \
 		echo -n "-"; \
 	done
-	@echo -n "] $(shell echo $$(($(COUNT) * 100 / $(TOTAL))))%    "
+	@echo -n "] $(shell echo $$(($(COUNT) * 100 / $(TOTAL))))%"
 	@$(CC) $(CPPFLAGS) -c $< -o $@ 2>$(ERROR_LOG) || (cat $(ERROR_LOG) && rm -f $(ERROR_LOG) && exit 1)
 	@echo -n "\r"
 
