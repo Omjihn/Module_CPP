@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/01/22 18:38:24 by gbricot          ###   ########.fr        #
+#    Updated: 2024/01/24 12:31:31 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow
 SRC =		AForm.cpp \
 			Bureaucrat.cpp \
 			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
 			main.cpp
 
 OBJ = $(SRC:.cpp=.o)
@@ -71,7 +72,7 @@ regular:
 
 clean:
 	@echo $(RED)Objects files deleted$(WHITE)
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) Land_shrubbery
 
 fclean: clean
 	@echo $(RED)Program deleted$(WHITE)

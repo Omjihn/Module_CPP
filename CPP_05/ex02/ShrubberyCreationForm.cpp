@@ -6,18 +6,18 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:45:29 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 19:16:37 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:44:55 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm( void ) : AForm("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm( void ) : AForm("ShrubberyCreationForm", 145, 137), target("Unknow target")
 {
 	std::cout << "[ShrubberyCreationForm] Default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string &input_target ) : AForm("ShrubberyCreationForm", 145, 137), target(input_target)
+ShrubberyCreationForm::ShrubberyCreationForm( const std::string input_target ) : AForm("ShrubberyCreationForm", 145, 137), target(input_target)
 {
 	std::cout << "[ShrubberyCreationForm] String constructor called" << std::endl;
 }
@@ -27,14 +27,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "[ShrubberyCreationForm] Destructor called" << std::endl;
 }
 
-void	ShrubberyCreationForm::execute( Bureaucrat const & executor)
+void	ShrubberyCreationForm::execute( Bureaucrat const & executor) const
 {
-	if (!ft_is_signed())
-		throw	AForm::FormNotSignedException();
-	else if (executor.getGrade() > getGrade_e())
-		throw	AForm::GradeTooLowException();
-	std::ofstream outfile(this->target + "_shrubbery");
-	outfile <<
+	checkBeforeExec(executor);
+	std::ofstream	file;
+	file.open((this->target + "_shrubbery").c_str());
+	file <<
 		"                                                          .\n" << \
 		"                                              .         ;\n" << \
 		"                 .              .              ;%     ;;\n" << \
@@ -63,5 +61,5 @@ void	ShrubberyCreationForm::execute( Bureaucrat const & executor)
 		"                               ;%@@@@%::;\n" << \
 		"                              ;%@@@@%%:;;;.\n" << \
 		"                          ...;%@@@@@%%:;;;;,..\n";
-	outfile.close();
+	file.close();
 }

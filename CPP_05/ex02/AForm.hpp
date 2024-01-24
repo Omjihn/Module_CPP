@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:40 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 19:16:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:44:05 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ class	AForm
 
 		const std::string	getName( void );
 		int					getGrade_s( void );
-		int					getGrade_e( void );
-		bool				ft_is_signed( void );
+		int					getGrade_e( void ) const;
+		bool				ft_is_signed( void ) const;
 
 		virtual void	execute(Bureaucrat const & executor) const = 0;
+
+		void	checkBeforeExec( Bureaucrat const & executor ) const;
 
 	protected:
 

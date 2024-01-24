@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:26:10 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 11:52:55 by gbricot          ###   ########.fr       */
+/*   Created: 2024/01/24 12:17:02 by gbricot           #+#    #+#             */
+/*   Updated: 2024/01/24 12:56:35 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include <ostream>
 # include <fstream>
 # include <exception>
+# include <cstdlib>
+# include <ctime>
 
 #include "AForm.hpp"
 
-class	ShrubberyCreationForm : public AForm
+class	RobotomyRequestForm : public AForm
 {
 	public:
 
-		ShrubberyCreationForm( void );
-		ShrubberyCreationForm( const std::string input_target );
-		~ShrubberyCreationForm();
+		RobotomyRequestForm( void );
+		RobotomyRequestForm( const std::string input_target );
+		~RobotomyRequestForm();
 
 		void	execute( Bureaucrat const & executor ) const;
 

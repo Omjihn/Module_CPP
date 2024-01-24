@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:25:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 18:46:48 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:51:07 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,38 @@ std::ostream    & operator<<( std::ostream &os, Bureaucrat& val )
 	return (os);
 }
 
-void    Bureaucrat::signForm( AForm &Form )
+void	Bureaucrat::signForm( AForm &form )
 {
-	if (Form.ft_is_signed())
+	if (form.ft_is_signed())
 	{
-		std::cout << this->getName() << " couldn’t sign " << Form.getName() \
+		std::cout << this->getName() << " couldn’t sign " << form.getName() \
 			<< " because it's already signed." << std::endl;
 	}
 	else
 	{
-		Form.beSigned(*this);
-		std::cout << this->getName() << " signed " << Form.getName() << "." << std::endl;
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << "." << std::endl;
 	}
 }
 
-const std::string Bureaucrat::getName( void )
+void	Bureaucrat::executeForm( AForm const &form ) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception encountered : " << e.what() << std::endl;
+	}
+}
+
+const std::string Bureaucrat::getName( void ) const
 {
 	return (this->name);
 }
 
-int Bureaucrat::getGrade( void )
+int Bureaucrat::getGrade( void ) const
 {
 	return (this->grade);
 }

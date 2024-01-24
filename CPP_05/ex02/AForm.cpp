@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:58 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 18:01:49 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:44:00 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,22 @@ int	AForm::getGrade_s( void )
 	return (this->grade_s);
 }
 
-int	AForm::getGrade_e( void )
+int	AForm::getGrade_e( void ) const
 {
 	return (this->grade_e);
 }
 
-bool	AForm::ft_is_signed( void )
+bool	AForm::ft_is_signed( void ) const
 {
 	return (this->is_signed);
+}
+
+void	AForm::checkBeforeExec( Bureaucrat const & executor ) const
+{
+	if (!ft_is_signed())
+		throw	AForm::FormNotSignedException();
+	else if (executor.getGrade() > getGrade_e())
+		throw	AForm::GradeTooLowException();
 }
 
 const char	*AForm::GradeTooHighException::what( void ) const throw()

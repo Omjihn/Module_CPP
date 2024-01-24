@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:50:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 15:25:23 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:50:58 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ class	Bureaucrat
 		friend std::ostream & operator<<( std::ostream& os, Bureaucrat& val);
 
 		void	signForm( AForm &form );
+		void	executeForm( AForm const &form ) const;
 
-		const std::string	getName( void );
-		int					getGrade( void );
+		const std::string	getName( void ) const;
+		int					getGrade( void ) const;
 
 		void	increaseGrade( void );
 		void	decreaseGrade( void );
