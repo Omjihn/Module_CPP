@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:40 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 12:44:05 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 14:17:12 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class	AForm
 
 		void	beSigned( Bureaucrat &signer );
 
-		const std::string	getName( void );
+		const std::string	getName( void ) const;
 		int					getGrade_s( void );
 		int					getGrade_e( void ) const;
 		bool				ft_is_signed( void ) const;
@@ -69,7 +69,7 @@ class	AForm
 
 	protected:
 
-			/*		CONSTRUCTORS		*/
+		/*		CONSTRUCTORS		*/
 
 		AForm( void );
 		AForm( const std::string input_name, const int i_grade_s, const int i_grade_e );

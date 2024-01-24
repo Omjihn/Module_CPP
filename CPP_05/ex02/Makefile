@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/01/24 12:31:31 by gbricot          ###   ########.fr        #
+#    Updated: 2024/01/24 14:03:34 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC =		AForm.cpp \
 			Bureaucrat.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp \
 			main.cpp
 
 OBJ = $(SRC:.cpp=.o)
@@ -72,7 +73,7 @@ regular:
 
 clean:
 	@echo $(RED)Objects files deleted$(WHITE)
-	@rm -f $(OBJ) Land_shrubbery
+	@rm -f $(OBJ) *_shrubbery
 
 fclean: clean
 	@echo $(RED)Program deleted$(WHITE)

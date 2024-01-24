@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:25:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 12:51:07 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 14:11:37 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	Bureaucrat::executeForm( AForm const &form ) const
 	try
 	{
 		form.execute(*this);
+		std::cout << this->name << " executed " << form.getName() << std::endl;
 	}
 	catch (std::exception & e)
 	{

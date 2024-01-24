@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:58 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 12:44:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 14:28:38 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ AForm::AForm( void ) : name("Interesting form"), grade_s(75), grade_e(75)
 	std::cout << "[AForm] Default constructor called" << std::endl;
 }
 
-AForm::AForm( const std::string input_name, const int i_grade_s, const int i_grade_e )  : name(input_name), grade_s(i_grade_s), grade_e(i_grade_e)
+AForm::AForm( const std::string input_name, const int i_grade_s, const int i_grade_e ) \
+	: name(input_name), grade_s(i_grade_s), grade_e(i_grade_e)
 {
 	std::cout << "[AForm] String/Grades constructor called" << std::endl;
 	if (this->grade_e > 150 || this->grade_s > 150)
@@ -29,7 +30,8 @@ AForm::AForm( const std::string input_name, const int i_grade_s, const int i_gra
 	this->is_signed = 0;
 }
 
-AForm::AForm( AForm &val ) : name(val.getName()), grade_s(val.getGrade_s()), grade_e(val.getGrade_e())
+AForm::AForm( AForm &val ) \
+	: name(val.getName()), grade_s(val.getGrade_s()), grade_e(val.getGrade_e())
 {
 	this->is_signed = val.ft_is_signed();
 	std::cout << "[AForm] Copy constructor called" << std::endl;
@@ -48,9 +50,9 @@ AForm & AForm::operator=( AForm &val )
 
 std::ostream	& operator<<( std::ostream &os, AForm& val )
 {
-	os << "The AForm : " << val.getName() << " needs " << val.getGrade_s() << \
+	os << "The Form : " << val.getName() << " needs " << val.getGrade_s() << \
 		" to be signed and " << val.getGrade_e() << " to be executed. " << \
-		"The AForm is ";
+		"The Form is ";
 	if (!val.ft_is_signed())
 		os << "not ";
 	os << "signed." << std::endl;
@@ -66,7 +68,7 @@ void    AForm::beSigned( Bureaucrat &signer )
 	this->is_signed = 1;
 }
 
-const std::string	AForm::getName( void )
+const std::string	AForm::getName( void ) const
 {
 	return (this->name);
 }
@@ -96,15 +98,15 @@ void	AForm::checkBeforeExec( Bureaucrat const & executor ) const
 
 const char	*AForm::GradeTooHighException::what( void ) const throw()
 {
-    return ("The grade is too high");
+	return ("The grade is too high");
 }
 
 const char	*AForm::GradeTooLowException::what( void ) const throw()
 {
-    return ("The grade is too low");
+	return ("The grade is too low");
 }
 
 const char	*AForm::FormNotSignedException::what( void ) const throw()
 {
-    return ("The form is not signed");
+	return ("The form is not signed");
 }
