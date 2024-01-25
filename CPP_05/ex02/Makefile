@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/01/24 14:03:34 by gbricot          ###   ########.fr        #
+#    Updated: 2024/01/25 11:06:35 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ define colorecho
 		echo -n "▓"; \
 		sleep 0.05; \
 	done
-	echo -n "]"; echo;
+	echo -n "]"; echo " 100%";
 	@tput cnorm
 endef
 

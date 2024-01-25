@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:17:02 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 12:56:35 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/25 10:34:39 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fstream>
 # include <exception>
 # include <cstdlib>
-# include <ctime>
+# include <unistd.h>
 
 #include "AForm.hpp"
 

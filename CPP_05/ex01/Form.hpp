@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:40 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/22 14:52:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/24 12:38:49 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class   Form
 		Form				& operator=( Form &val );
 		friend std::ostream	& operator<<( std::ostream& os, Form& val);
 
-		void    beSigned( Bureaucrat &signer );
+		void	beSigned( Bureaucrat &signer );
 
 		const std::string	getName( void );
 		int					getGrade_s( void );
