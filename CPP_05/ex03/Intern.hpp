@@ -28,12 +28,10 @@ class	Intern
 
 	private:
 
-		std::string	accepted_names[3];
-		AForm *(*function_ptr[3])(const std::string &);
-
-		AForm	*Create_SCF( const std::string &target) const;
-		AForm	*Create_RRF( const std::string &target) const;
-		AForm	*Create_PPF( const std::string &target) const;
+		typedef	AForm	*(Intern::*func_array)(const std::string &);
+		AForm	*Create_SCF( const std::string &target);
+		AForm	*Create_RRF( const std::string &target);
+		AForm	*Create_PPF( const std::string &target);
 };
 
 #endif
