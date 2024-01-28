@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -23,56 +24,23 @@ int main(void)
 	{
 		Bureaucrat	dude("Michel", 1);
 
-		ShrubberyCreationForm	form1("House");
-		RobotomyRequestForm		form2("Bosetti");
-		PresidentialPardonForm	form3("Charles");
+		Intern		intern_dude;
 
-		dude.signForm(form1);
-		dude.signForm(form2);
-		dude.signForm(form3);
+		ShrubberyCreationForm	*form1(intern_dude.makeForm("shrubbery creation", "House"));
+		RobotomyRequestForm	*form2(intern_dude.makeForm("robotomy request", "Bosetti"));
+		PresidentialPardonForm	*form3(intern_dude.makeForm("presidential pardon", "jsp"));
 
-		dude.executeForm(form1);
-		dude.executeForm(form2);
-		dude.executeForm(form3);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Exception encountered : " << e.what() << std::endl;
-	}
+		dude.signForm(*form1);
+		dude.signForm(*form2);
+		dude.signForm(*form3);
 
-/*	std::cout << "2nd test :" << std::endl;		// Test to be sure Form is an abstract class
-		try
-		{
-		AForm	test("test", 30, 28);
+		dude.executeForm(*form1);
+		dude.executeForm(*form2);
+		dude.executeForm(*form3);
 
-		}
-		catch (std::exception & e)
-		{
-				std::cout << "Exception encountered : " << e.what() << std::endl;
-	}*/
-
-	std::cout << std::endl << "3rd test :" << std::endl;
-	try
-	{
-		Bureaucrat	dude("Michel", 70);
-
-		ShrubberyCreationForm	form1("Land");
-		RobotomyRequestForm		form2("Bosetti");
-		PresidentialPardonForm	form3("Charles");
-
-		std::cout << form2;
-		dude.signForm(form2);
-		dude.signForm(form1);
-
-		std::cout << dude;
-		std::cout << form1;
-		std::cout << form2;
-		std::cout << form3;
-
-		dude.executeForm(form2);
-		dude.executeForm(form1);
-		dude.signForm(form3);
-		dude.executeForm(form3);
+		delete form1;
+		delete form2;
+		delete form3;
 	}
 	catch (std::exception & e)
 	{

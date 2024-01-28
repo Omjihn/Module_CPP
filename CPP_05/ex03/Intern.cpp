@@ -26,12 +26,12 @@ AForm	*Intern::makeForm( const std::string &form_name, const std::string &i_targ
 {
 	Intern::func_array	func_ptr[3] = {&Intern::Create_SCF, &Intern::Create_RRF, &Intern::Create_PPF};
 
-	std::string	accepted_names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	for	(char i = 0; i < 3; i++)
+	std::string	accepted_names[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	for	(int i = 0; i < 3; i++)
 	{
-		if (form_name == accepted_names[i])
+		if (form_name.compare(accepted_names[i]))
 		{
-			return (this.*func_ptr[i](i_target));
+			return ((this->*func_ptr[i])(i_target));
 		}
 	}
 	return (NULL);
