@@ -22,13 +22,15 @@ int main(void)
 	std::cout << "1st test :" << std::endl;
 	try
 	{
-		Bureaucrat	dude("Michel", 1);
-
+		Bureaucrat	dude("Michel", 50);
 		Intern		intern_dude;
+		AForm	*form1 = intern_dude.makeForm("shrubbery creation", "House");
+		AForm   *form2 = intern_dude.makeForm("robotomy request", "Bosetti");
+		AForm   *form3 = intern_dude.makeForm("presidential pardon", dude.getName());
 
-		ShrubberyCreationForm	*form1(intern_dude.makeForm("shrubbery creation", "House"));
-		RobotomyRequestForm	*form2(intern_dude.makeForm("robotomy request", "Bosetti"));
-		PresidentialPardonForm	*form3(intern_dude.makeForm("presidential pardon", "jsp"));
+		std::cout << *form1;
+		std::cout << *form2;
+		std::cout << *form3;
 
 		dude.signForm(*form1);
 		dude.signForm(*form2);
@@ -46,4 +48,16 @@ int main(void)
 	{
 		std::cout << "Exception encountered : " << e.what() << std::endl;
 	}
+	std::cout << "2st test :" << std::endl;
+        try
+        {
+		Intern	dude;
+		Intern	dude2(dude);
+		Intern	dude3;
+		dude3	= dude;
+        }
+        catch (std::exception & e)
+        {
+                std::cout << "Exception encountered : " << e.what() << std::endl;
+        }
 }

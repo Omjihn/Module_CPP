@@ -22,8 +22,10 @@ class	Intern
 	public:
 
 		Intern();
+		Intern( Intern &cpy );
 		~Intern();
 
+		Intern  &operator=( const Intern& cpy );
 		AForm	*makeForm( const std::string &i_form_name, const std::string &i_target );
 
 	private:

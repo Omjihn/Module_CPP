@@ -17,9 +17,22 @@ Intern::Intern( void )
 	std::cout << "[Intern] Default constructor called" << std::endl;
 }
 
+Intern::Intern( Intern &cpy )
+{
+        std::cout << "[Intern] Copy constructor called" << std::endl;
+	*this = cpy;
+}
+
 Intern::~Intern()
 {
 	std::cout << "[Intern] Destructor called" << std::endl;
+}
+
+Intern	&Intern::operator=( const Intern& cpy )
+{
+	std::cout << "[Intern] Copy assignment operator" << std::endl;
+	(void) cpy;
+	return (*this);
 }
 
 AForm	*Intern::makeForm( const std::string &form_name, const std::string &i_target )
@@ -29,17 +42,18 @@ AForm	*Intern::makeForm( const std::string &form_name, const std::string &i_targ
 	std::string	accepted_names[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	for	(int i = 0; i < 3; i++)
 	{
-		if (form_name.compare(accepted_names[i]))
+		if (!form_name.compare(accepted_names[i]))
 		{
 			return ((this->*func_ptr[i])(i_target));
 		}
 	}
+	std::cout << "[Debug Intern] Nothing found" << std::endl;
 	return (NULL);
 }
 
 AForm *Intern::Create_SCF(const std::string &target)
 {
-    return (new ShrubberyCreationForm(target));
+	return (new ShrubberyCreationForm(target));
 }
 
 AForm *Intern::Create_RRF(const std::string &target)
