@@ -54,7 +54,7 @@ int main(void)
 		Intern	dude;
 		Intern	dude2(dude);
 		Intern	dude3;
-		dude3	= dude;
+		dude3 = dude;
         }
         catch (std::exception & e)
         {
