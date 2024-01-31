@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/25 11:14:46 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:21:00 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	std::cout << "1st test :" << std::endl;
 	try
 	{
-		Bureaucrat	dude("Michel", 50);
+		Bureaucrat	dude("Dude", 1);
 		Intern		intern_dude;
 		AForm	*form1 = intern_dude.makeForm("shrubbery creation", "House");
 		AForm   *form2 = intern_dude.makeForm("robotomy request", "Bosetti");
@@ -38,6 +38,8 @@ int main(void)
 
 		dude.executeForm(*form1);
 		dude.executeForm(*form2);
+		dude.executeForm(*form2);
+		dude.executeForm(*form2);
 		dude.executeForm(*form3);
 
 		delete form1;
@@ -48,16 +50,4 @@ int main(void)
 	{
 		std::cout << "Exception encountered : " << e.what() << std::endl;
 	}
-	std::cout << "2st test :" << std::endl;
-        try
-        {
-		Intern	dude;
-		Intern	dude2(dude);
-		Intern	dude3;
-		dude3 = dude;
-        }
-        catch (std::exception & e)
-        {
-                std::cout << "Exception encountered : " << e.what() << std::endl;
-        }
 }

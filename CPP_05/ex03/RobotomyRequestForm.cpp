@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:18:15 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/25 10:34:34 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:17:27 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void	RobotomyRequestForm::execute( Bureaucrat const & executor) const
 {
 	this->checkBeforeExec(executor);
-	srand(getpid());
+	static unsigned int	random;
+	random += getpid();
+	srand(random);
 	std::cout << "*Driling noises*" << std::endl;
 	if (std::rand() & 1)
 		std::cout << this->target << " has been robotomized. 🤖" << std::endl;

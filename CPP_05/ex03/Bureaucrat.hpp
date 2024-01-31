@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:50:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/24 12:50:58 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:34:12 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class	Bureaucrat
 {
 	public:
 
-		/*      CONSTRUCTORS/DESTRUCTOR    */
+		/*		CONSTRUCTORS/DESTRUCTOR		*/
 
 		Bureaucrat( void );
 		Bureaucrat( const std::string input_name, int input_grade );
 		Bureaucrat( Bureaucrat &val );
 		~Bureaucrat();
 
-		/*      EXCEPTIONS CLASSES      */
+		/*		EXCEPTIONS CLASSES		*/
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -46,7 +46,7 @@ class	Bureaucrat
 				virtual const char* what( void ) const throw();
 		};
 
-		/*      MEMBERS FUNCTIONS       */
+		/*		MEMBERS FUNCTIONS		*/
 
 		Bureaucrat			& operator=( Bureaucrat &val );
 		friend std::ostream & operator<<( std::ostream& os, Bureaucrat& val);

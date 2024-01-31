@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:19:45 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/25 12:20:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/01/31 16:34:34 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Intern
 		Intern( Intern &cpy );
 		~Intern();
 
-		Intern  &operator=( const Intern& cpy );
+		Intern	&operator=( const Intern& cpy );
 		AForm	*makeForm( const std::string &i_form_name, const std::string &i_target );
 
 	private:
