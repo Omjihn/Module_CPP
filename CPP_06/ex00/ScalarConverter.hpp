@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:04:48 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/02 16:01:40 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/03 13:06:06 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class	ScalarConverter
 		static void	StringToInt( const std::string& str );
 		static void	StringToFloat( const std::string& str );
 		static void	StringToDouble( const std::string& str);
+		static int	CountPrecision( const std::string &str );
 };
 
 #endif
