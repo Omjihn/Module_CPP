@@ -6,11 +6,11 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:23:47 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/02 15:48:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/03 13:15:29 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvertionTypes.h"
+#include "ScalarConverter.hpp"
 
 int	main( int ac, char **av )
 {

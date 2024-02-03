@@ -6,11 +6,11 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:14:44 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/03 13:08:28 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/03 13:15:39 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvertionTypes.h"
+#include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter( void )
 {
