@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/03 17:08:30 by gbricot          ###   ########.fr        #
+#    Updated: 2024/02/08 19:54:51 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = g++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 
-SRC =		
+SRC =		main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -52,7 +52,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 	@echo -n "Compiling objects files: "
-	@echo -n "["ls
+	@echo -n "["
 	
 	@for i in `seq 1 $(shell echo $$(($(COUNT) * $(TOTAL) / $(TOTAL))))`; do \
 		echo -n "▓"; \
@@ -65,7 +65,7 @@ $(NAME): $(OBJ)
 	@echo -n "\r"
 
 regular:
-		@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
+	@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean:
 	@echo $(RED)Objects files deleted$(WHITE)
