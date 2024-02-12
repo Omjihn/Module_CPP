@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/31 16:21:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/12 10:23:50 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,26 @@ int main(void)
 		delete form1;
 		delete form2;
 		delete form3;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Exception encountered : " << e.what() << std::endl;
+	}
+	std::cout << "2nd test :" << std::endl;
+	try
+	{
+		Bureaucrat      dude("Dude", 1);
+                Intern          intern_dude;
+
+		AForm   *form1 = intern_dude.makeForm("robotomy request", "oui");
+
+		if (form1)
+		{
+			std::cout << *form1;
+			dude.signForm(*form1);
+			dude.executeForm(*form1);
+			delete form1;
+		}
 	}
 	catch (std::exception & e)
 	{
