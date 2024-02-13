@@ -44,7 +44,7 @@ class   Bureaucrat
         /*      MEMBERS FUNCTIONS       */
 
         Bureaucrat & operator=( Bureaucrat &val );
-        friend std::ostream & operator<<( std::ostream& os, Bureaucrat& val);
+        friend	std::ostream & operator<<( std::ostream& os, Bureaucrat& val);
 
 
         const std::string   getName( void );
