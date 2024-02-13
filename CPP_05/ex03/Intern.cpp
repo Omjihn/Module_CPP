@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 11:25:43 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/31 16:35:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/12 10:20:32 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ AForm	*Intern::makeForm( const std::string &form_name, const std::string &i_targ
 	{
 		if (!form_name.compare(accepted_names[i]))
 		{
+			std::cout << "Intern creates " << accepted_names[i] << " form" << std::endl;
 			return ((this->*func_ptr[i])(i_target));
 		}
 	}
+	std::cout << "Unknow form" << std::endl;
 	return (NULL);
 }
 

@@ -6,13 +6,13 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/03 15:59:34 by gbricot          ###   ########.fr        #
+#    Updated: 2024/02/12 13:09:29 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Serializer
 
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 

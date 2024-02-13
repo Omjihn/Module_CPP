@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:52:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/01/25 11:14:46 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/12 10:30:38 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main(void)
 	std::cout << std::endl << "3rd test :" << std::endl;
 	try
 	{
-		Bureaucrat	dude("Michel", 70);
+		Bureaucrat	dude("Michel", 1);
 
 		ShrubberyCreationForm	form1("Land");
 		RobotomyRequestForm		form2("Bosetti");
@@ -71,7 +71,7 @@ int main(void)
 
 		dude.executeForm(form2);
 		dude.executeForm(form1);
-		dude.signForm(form3);
+		//dude.signForm(form3);
 		dude.executeForm(form3);
 	}
 	catch (std::exception & e)

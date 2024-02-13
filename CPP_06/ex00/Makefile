@@ -6,13 +6,13 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 14:54:50 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/02 16:08:25 by gbricot          ###   ########.fr        #
+#    Updated: 2024/02/12 13:09:13 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 
