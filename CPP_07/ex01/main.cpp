@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 05:00:09 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/13 09:27:25 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/13 20:17:28 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int	main(void)
 {
-
 	/*		1ST TEST		*/
 
 	std::cout << "1st test :" << std::endl;
@@ -29,12 +28,11 @@ int	main(void)
 							std::rand() };
 
 	std::cout << "arr = " << std::endl;
-	for (int i = 0; i < arr_len; i++)
-		print_val(arr[i]);
+	iter(arr, arr_len, print_val);
+	std::cout << "arr remplace_even_odd()" << std::endl;
 	iter(arr, arr_len, remplace_even_odd);
 	std::cout << "arr = " << std::endl;
-	for (int i = 0; i < arr_len; i++)
-		print_val(arr[i]);
+	iter(arr, arr_len, print_val);
 
 	/*		2ND TEST		*/
 
@@ -44,12 +42,23 @@ int	main(void)
 								'l',
 								'u',
 								't' };
-	std::cout << "arr = " << std::endl;
-	for (int i = 0; i < arr_len; i++)
-		print_val(arr1[i]);
+	std::cout << "arr1 = " << std::endl;
+	iter(arr1, arr_len, print_val);
+	std::cout << "arr1 remplace_even_odd()" << std::endl;
 	iter(arr1, arr_len, remplace_even_odd);
-	std::cout << "arr = " << std::endl;
-	for (int i = 0; i < arr_len; i++)
-		print_val(arr1[i]);
+	std::cout << "arr1 = " << std::endl;
+	iter(arr1, arr_len, print_val);
+
+	/*		3RD TEST		*/
+
+	std::cout << "3rd test :" << std::endl;
+	std::string	arr2[arr_len] = {	"Lorem",
+									"Ipsum",
+									"dolor",
+									"sit",
+									"amet" };
+	std::cout << "arr2 = " << std::endl;
+	iter(arr2, arr_len, print_val);
+	
 	return (0);
 }
