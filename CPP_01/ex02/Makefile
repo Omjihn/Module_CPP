@@ -14,7 +14,7 @@ NAME =		HI_THIS_IS_BRAIN
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-CC =		g++
+CC =		c++
 
 SRC =		main.cpp
 

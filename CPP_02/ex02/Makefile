@@ -12,7 +12,7 @@
 
 NAME =		Now_were_talking
 
-CC =		g++
+CC =		c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 

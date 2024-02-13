@@ -14,7 +14,7 @@ NAME =		Unnecessary_violence
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
 
-CC =		g++
+CC =		c++
 
 SRC =		main.cpp\
 			Weapon.cpp\

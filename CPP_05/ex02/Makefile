@@ -12,7 +12,7 @@
 
 NAME = Bureaucrat
 
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow
 

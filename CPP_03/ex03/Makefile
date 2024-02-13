@@ -12,7 +12,7 @@
 
 NAME =		Diamond_Trap
 
-CC =		g++
+CC =		c++
 
 CPPFLAGS =	-Wall -Wextra -Werror -std=c++98 -Wshadow
 
