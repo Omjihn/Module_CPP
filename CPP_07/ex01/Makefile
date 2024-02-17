@@ -6,13 +6,13 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/13 04:32:06 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/13 05:00:00 by gbricot          ###   ########.fr        #
+#    Updated: 2024/02/17 19:18:06 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Iter
 
-CC = g++
+CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 

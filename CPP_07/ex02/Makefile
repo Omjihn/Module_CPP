@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/13 04:32:06 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/17 19:18:10 by gbricot          ###   ########.fr        #
+#    Created: 2024/02/13 20:18:50 by gbricot           #+#    #+#              #
+#    Updated: 2024/02/17 20:32:20 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Templates
+NAME = Array
 
 CC = c++
 
