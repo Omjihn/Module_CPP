@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 05:00:29 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/13 20:12:29 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/18 14:26:54 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	print_val( T &i )
 }
 
 template< typename A, typename L >
-void	iter( A *array, L &lenght, void (*func)(A &val) )
+void	iter( A *array, L lenght, void (*func)(A const &val) )
 {
 	if (!array || !func)
 		return ;

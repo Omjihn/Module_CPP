@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 05:00:09 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/13 20:17:28 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/18 14:17:09 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 							std::rand() };
 
 	std::cout << "arr = " << std::endl;
-	iter(arr, arr_len, print_val);
+	iter(arr, arr_len, print_val<const int>);
 	std::cout << "arr remplace_even_odd()" << std::endl;
 	iter(arr, arr_len, remplace_even_odd);
 	std::cout << "arr = " << std::endl;

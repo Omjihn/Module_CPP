@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 09:31:32 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/17 20:34:58 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/17 20:42:19 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class	Array
 		T		&operator[]( int index );
 		T		&operator[]( unsigned int index );
 
-		/*		MEMBERS FUNCTIONS		*/
+		/*		MEMBER FUNCTION		*/
 
 		unsigned int	size( void ) const ;
 
