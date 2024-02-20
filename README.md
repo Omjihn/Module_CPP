@@ -18,6 +18,6 @@ This project is a C++ learning resource from 42 school.
 |  [Module_05](CPP_05/) | Exceptions | [Subject_05](subjects/subject_05_feb_2024.pdf) |
 |  [Module_06](CPP_06/) | c++ casts : static_cast, reinterpret_cast and dynamic_cast | [Subject_06](subjects/subject_06_feb_2024.pdf) |
 |  [Module_07](CPP_07/) | Templates | [Subject_07](subjects/subject_07_feb_2024.pdf) |
-|  Module_08 (Work_in_progress) | Templated containers, iterators, algorithms | [Subject_08](subjects/subject_08_feb_2024.pdf) |
+|  [Module_08](CPP_08/) | Templated containers, iterators, algorithms | [Subject_08](subjects/subject_08_feb_2024.pdf) |
 |  Module_09 (Work_in_progress) | STL | [Subject_09](subjects/subject_09_feb_2024.pdf) |
 
