@@ -6,13 +6,15 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 03:18:12 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/20 11:37:17 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/20 11:59:32 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
 #include <deque>
+
+/*		EXCEPTION CLASS		*/
 
 class	ValueNotFound : public std::exception
 {
