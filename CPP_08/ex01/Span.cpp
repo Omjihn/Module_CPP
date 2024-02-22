@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/21 17:46:19 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:40:45 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Span::Span( unsigned int n ) : Array(n), index(0)
 	std::cout << "[Span] Unsigned int constructor called" << std::endl;
 }
 
-Span::Span( Span &val ) : Array(val.Array), index(val.index)
+Span::Span( const Span &val ) : Array(val.Array), index(val.index)
 {
 	std::cout << "[Span] Copy constructor called" << std::endl;
 }
@@ -66,9 +66,51 @@ void	Span::printContent( void )
 	
 }
 
-/*		EXCEPTION FUNCTION		*/
+void	Span::addRandNumbers( void )
+{
+	std::srand(getpid());
+	
+	for (unsigned int i = 0; i < Array.size(); i++)
+		Array.at(i) = std::rand();
+}
+
+unsigned int	Span::shortestSpan( void )
+{
+	if (index <= 1)
+		throw Span::NotEnoughNumbers();
+	std::vector<int>	cpy = Array;
+
+	std::sort(cpy.begin(), cpy.begin() + this->index);
+
+	int	shortest_span = INT_MAX;
+	std::vector<int>::iterator	it = cpy.begin();
+	for (unsigned int i = 0; (i + 1) < this->index; i++)
+	{
+		if (shortest_span > (*(it + 1) - *it))
+			shortest_span = (*(it + 1) - *it);
+		it++;
+	}
+	return (shortest_span);
+}
+
+unsigned int	Span::longestSpan( void )
+{
+	if (index <= 1)
+		throw Span::NotEnoughNumbers();
+	int	min = *std::min_element(Array.begin(), Array.begin() + index);
+	int	max = *std::max_element(Array.begin(), Array.begin() + index);
+	
+	return (max - min);
+}
+
+/*		EXCEPTIONS FUNCTIONS		*/
 
 const char *Span::NoMoreSpaceLeft::what( void ) const throw()
 {
 	return ("No more space left");
+}
+
+const char *Span::NotEnoughNumbers::what( void ) const throw()
+{
+	return ("Not enough numbers");
 }

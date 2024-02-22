@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:26 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/21 18:00:31 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:38:39 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <iostream>
 # include <algorithm>
 # include <vector>
+# include <iterator>
+# include <limits.h>
+# include <unistd.h>
+
 
 class	Span
 {
@@ -30,7 +34,7 @@ class	Span
 
 		Span( void );
 		Span( unsigned int n );
-		Span( Span &val );
+		Span( const Span &val );
 		~Span();
 
 		/*		OPERATOR OVERLOADING		*/
@@ -40,14 +44,22 @@ class	Span
 		/*		MEMBERS FUNCTIONS		*/
 
 		void	addNumber( int nb );
+		void	addRandNumbers( void );
 		void	printContent( void );
 
 		unsigned int	shortestSpan( void );
 		unsigned int	longestSpan( void );
 
-		/*		EXCEPTION CLASS		*/
+		/*		EXCEPTIONS CLASSES		*/
 
 		class	NoMoreSpaceLeft : public std::exception
+		{
+			public:
+
+				virtual const char* what( void ) const throw();
+		};
+		
+		class	NotEnoughNumbers : public std::exception
 		{
 			public:
 
