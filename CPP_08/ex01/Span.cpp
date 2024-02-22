@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/22 11:40:45 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:45:15 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	Span::printContent( void )
 	for (unsigned int i = 0; i < index; i++)
 		std::cout << Array.at(i) << "\n";
 	if (index < Array.size())
-		std::cout << (Array.size() - index) << " spaces left" << std::endl;
+		std::cout << (Array.size() - index) << " space(s) left" << std::endl;
 	else
 		std::cout << "The Span is full" << std::endl;
 	
@@ -72,6 +72,7 @@ void	Span::addRandNumbers( void )
 	
 	for (unsigned int i = 0; i < Array.size(); i++)
 		Array.at(i) = std::rand();
+	index = Array.size();
 }
 
 unsigned int	Span::shortestSpan( void )

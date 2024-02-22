@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:13 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/22 11:42:20 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/22 11:44:52 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(void)
 	sp.addNumber(3);
 	sp.addNumber(17);
 	sp.addNumber(9);
-	sp.addNumber(11);
+	//sp.addNumber(11);
 
 	try
 	{
@@ -77,6 +77,7 @@ int	main(void)
 		std::cerr << "Exception encountered : " << e.what() << std::endl;
 	}
 
+	sp.printContent();
 	sp.addRandNumbers();
 	sp.printContent();
 
