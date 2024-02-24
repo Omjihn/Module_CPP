@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:13 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/22 11:44:52 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/24 09:03:59 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(void)
 
 	Span sp = Span(5);
 	
-	sp.addNumber(6);
+	sp.addNumber(-1);
 	sp.addNumber(3);
 	sp.addNumber(17);
 	sp.addNumber(9);

@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/22 11:45:15 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/02/24 09:12:13 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	Span::addNumber( int nb )
 void	Span::printContent( void )
 {
 	for (unsigned int i = 0; i < index; i++)
-		std::cout << Array.at(i) << "\n";
+		std::cout << "Span[" << i << "] = " << Array.at(i) << "\n";
 	if (index < Array.size())
 		std::cout << (Array.size() - index) << " space(s) left" << std::endl;
 	else
