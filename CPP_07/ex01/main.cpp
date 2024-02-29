@@ -21,38 +21,31 @@ int	main(void)
 	std::cout << "1st test :" << std::endl;
 	std::srand(getpid());
 	int arr_len = 5;
-	int arr[arr_len] = {	std::rand(),
+	int arr[5] = {	std::rand(),
 							std::rand(),
 							std::rand(),
 							std::rand(),
 							std::rand() };
 
 	std::cout << "arr = " << std::endl;
-	iter(arr, arr_len, print_val<const int>);
-	std::cout << "arr remplace_even_odd()" << std::endl;
-	iter(arr, arr_len, remplace_even_odd);
-	std::cout << "arr = " << std::endl;
 	iter(arr, arr_len, print_val);
 
 	/*		2ND TEST		*/
 
 	std::cout << "2nd test :" << std::endl;
-	char	arr1[arr_len] = {	'S',
+	char	arr1[5] = {	'S',
 								'a',
 								'l',
 								'u',
 								't' };
-	std::cout << "arr1 = " << std::endl;
-	iter(arr1, arr_len, print_val);
-	std::cout << "arr1 remplace_even_odd()" << std::endl;
-	iter(arr1, arr_len, remplace_even_odd);
+
 	std::cout << "arr1 = " << std::endl;
 	iter(arr1, arr_len, print_val);
 
 	/*		3RD TEST		*/
 
 	std::cout << "3rd test :" << std::endl;
-	std::string	arr2[arr_len] = {	"Lorem",
+	std::string	arr2[5] = {	"Lorem",
 									"Ipsum",
 									"dolor",
 									"sit",

@@ -13,15 +13,6 @@
 #include <iostream>
 
 template< typename T >
-void	remplace_even_odd( T &i )
-{
-	if (i & 1)
-		i = 0;
-	else
-		i = 1;
-}
-
-template< typename T >
 void	print_val( T &i )
 {
 	std::cout << '\t' << i << std::endl;
