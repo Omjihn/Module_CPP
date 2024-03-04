@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/01 11:57:29 by gbricot           #+#    #+#              #
-#    Updated: 2024/03/01 12:03:49 by gbricot          ###   ########.fr        #
+#    Updated: 2024/03/04 11:48:38 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 
 SRC =		main.cpp \
-			BitcoinExchange.cpp
+			BitcoinExchange.cpp \
+			Date.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Date.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 11:58:29 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 12:34:49 by gbricot          ###   ########.fr       */
+/*   Created: 2024/03/04 11:40:23 by gbricot           #+#    #+#             */
+/*   Updated: 2024/03/04 12:15:24 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
-#include <iostream>
-#include <cstdlib>
+#ifndef	DATE_HPP
+# define DATE_HPP
 
-int	main( int ac, char **av )
+# include <iostream>
+# include <sstream>
+
+class Date
 {
-/* 	if (ac != 2)
-	{
-		std::cerr << ERR_ARG << std::endl;
-		return (1);
-	}
-	BitcoinExchange	bc(av[1]);
-	if (bc.error())
-		return (1);
-	return (0); */
-	std::string	str("2024-03-04");
-	Date	test(str);
-}
+	private:
+
+		unsigned int	_year;
+		unsigned char	_month;
+		unsigned char	_day;
+
+	public:
+
+		Date( void );
+		Date( std::string &str );
+		Date( Date &val );
+		~Date( );
+};
+
+#endif
