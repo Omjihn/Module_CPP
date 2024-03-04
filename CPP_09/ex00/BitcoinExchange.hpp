@@ -6,19 +6,21 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:25 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 11:40:15 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 15:54:16 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-# include <map>
+# include <deque>
 # include <string>
 # include <cctype>
 # include <fstream>
 # include <cstdlib>
+# include <utility>
 # include <iostream>
+# include <functional>
 
 # include "Date.hpp"
 
@@ -33,9 +35,9 @@ class BitcoinExchange
 
 		/*		PRIVATE MEMBERS VARIABLES		*/
 
-		std::map< std::string, float >	_data;
-		std::string						_sep;
-		bool							_error;
+		std::deque< std::pair<Date *, float> >	_data;
+		std::string								_sep;
+		bool									_error;
 
 		/*		PRIVATE MEMBERS FUNCTIONS		*/
 
@@ -51,6 +53,10 @@ class BitcoinExchange
 		BitcoinExchange( std::string av );
 		BitcoinExchange( BitcoinExchange &val );
 		~BitcoinExchange();
+
+		/*		OPERATOR OVERLOADING		*/
+
+		BitcoinExchange	&operator=( BitcoinExchange &cpy );
 
 		/*		PUBLIC MEMBER FUNCTION		*/
 

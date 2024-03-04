@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:48:31 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 12:32:45 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 14:47:47 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ Date::Date( void )
 	_year = 1970;
 	_month = 1;
 	_day = 1;
+	_error = false;
 }
 
-Date::Date( std::string &str )
+Date::Date( std::string &str ) : _error (0)
 {
 	std::istringstream iss(str);
 	char	delimiter;
@@ -30,15 +31,13 @@ Date::Date( std::string &str )
 		std::cerr << "Error: Invalid date format" << std::endl;
 		return ;
 	}
-
 	_month = static_cast< unsigned char >(tempMonth);
 	_day = static_cast< unsigned char >(tempDay);
-
-	if (_month > 12 || _day > 31)
+	if (!_month || !_day || _month > 12 || _day > 31) /* NO ENTIERLY CORRECT BUT IT FIT THE SUBJECT */
 	{
 		std::cerr << "Error: Incorrect date value :\n\t" << str << std::endl;
+		_error = true;
 	}
-
 	std::cout << "Year :" << _year << "\nMonth :" << static_cast<int>(_month) << "\nDay :" << static_cast<int>(_day) << std::endl;
 }
 
@@ -47,9 +46,36 @@ Date::Date( Date &val )
 	_year = val._year;
 	_month = val._month;
 	_day = val._day;
+	_error = val._error;
 }
 
 Date::~Date( )
 {
 	
+}
+
+Date	&Date::operator=( Date &cpy )
+{
+	_year = cpy._year;
+	_month = cpy._month;
+	_day = cpy._day;
+	_error = cpy._error;
+	return (*this);
+}
+
+bool	Date::operator<=( const Date &cmp ) const
+{
+	if (_year < cmp._year)
+		return (true);
+	else if (_year == cmp._year && _month < cmp._month)
+		return (true);
+	else if (_year == cmp._year && _month == cmp._month && _day <= cmp._day)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Date::getError( void ) const
+{
+	return (_error);
 }

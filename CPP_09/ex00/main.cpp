@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:29 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 12:34:49 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 15:43:54 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main( int ac, char **av )
 {
-/* 	if (ac != 2)
+ 	if (ac != 2)
 	{
 		std::cerr << ERR_ARG << std::endl;
 		return (1);
@@ -24,7 +24,5 @@ int	main( int ac, char **av )
 	BitcoinExchange	bc(av[1]);
 	if (bc.error())
 		return (1);
-	return (0); */
-	std::string	str("2024-03-04");
-	Date	test(str);
+	return (0); 
 }
