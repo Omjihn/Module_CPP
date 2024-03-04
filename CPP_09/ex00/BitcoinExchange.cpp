@@ -6,16 +6,17 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:27 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 15:54:27 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 20:10:52 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange( std::string av )
+BitcoinExchange::BitcoinExchange( void )
 {
 	_error = 0;
-	parseFile( av );
+	const char *file = "data.csv";
+	parseFile( file );
 }
 
 BitcoinExchange::BitcoinExchange( BitcoinExchange &val )
@@ -35,14 +36,38 @@ BitcoinExchange::~BitcoinExchange()
 
 /*		PRIVATE MEMBERS FUNCTIONS		*/
 
-void	BitcoinExchange::parseFile( std::string &av )
+void	BitcoinExchange::getAllLines( std::ifstream &file)
 {
-	std::ifstream					file;
+	std::string	line;
+	float value;
 
-	file.open(av.c_str(), std::ifstream::in);
+	while (std::getline(file, line))
+	{
+		size_t pos = line.find(_sep);
+		if (pos != std::string::npos)
+		{
+			std::string dateStr = line.substr(0, pos);
+			std::string valueStr = line.substr(pos + _sep.length());
+			Date* datePtr = new Date(dateStr);
+			std::istringstream iss(valueStr);
+			if (iss >> value)
+				_data.push_back(std::make_pair(datePtr, value));
+			else
+				std::cerr << "Error: No value found in line: " << line << std::endl;
+		}
+		else
+			std::cerr << "Error: Separator not found in line: " << line << std::endl;
+	}
+}
+
+void	BitcoinExchange::parseFile( const char *file_name )
+{
+	std::ifstream	file;
+
+	file.open(file_name, std::ifstream::in);
 	if (!file.is_open())
 	{
-		std::cerr << "Error: could not open file." << std::endl;
+		std::cerr << "Error: Could not open the data base." << std::endl;
 		_error = 1;
 		return ;
 	}
@@ -52,34 +77,104 @@ void	BitcoinExchange::parseFile( std::string &av )
 	{
 		std::cerr << ERR_HEADER << std::endl;
 		_error = 1;
+		file.close();
 		return ;
 	}
-	std::cout << "[Debug] _sep : \"" << _sep << "\"" << std::endl;
-	while (std::getline(file, line))
+	getAllLines( file );
+	file.close();
+}
+
+void	BitcoinExchange::displayResult( float &input_value, float &price )
+{
+	std::cout << input_value * price << std::endl;
+}
+
+/*		HORRIBLE FUNCTION NEED TO CHANGE IT (it's late :)		*/
+void	BitcoinExchange::getClosest( Date &input_date, float &input_value )
+{
+	std::deque<std::pair< Date *, float > >::iterator it = _data.begin();
+	if (input_date == *it->first)
 	{
-		size_t pos = line.find(_sep);
-
-		if (pos != std::string::npos)
+		displayResult( input_value, it->second );
+		return ;
+	}
+	if (input_date <= *it->first)
+	{
+		std::cerr << "Error: no data at this date." << std::endl;
+	}
+	while (it != _data.end())
+	{
+		if (input_date == *it->first)
 		{
+			displayResult( input_value, it->second );
+			return ;
+		}
+		else if (input_date <= *it->first)
+		{
+			it--;
+			displayResult( input_value, it->second );
+			return ;
+		}
+		it++;
+	}
+	std::cerr << "Error: no data at this date." << std::endl;
+}
+
+void	BitcoinExchange::searchDB( std::string &line )
+{
+	float		input_value;
+	size_t pos = line.find(" | ");
+
+	if (pos != std::string::npos)
+	{
 			std::string dateStr = line.substr(0, pos);
-			std::string valueStr = line.substr(pos + _sep.length());
-
-			Date* datePtr = new Date(dateStr);
-
+			std::string valueStr = line.substr(pos + 3);
+			Date	input_date(dateStr);
+			if (input_date.getError())
+				return ;
 			std::istringstream iss(valueStr);
-			float value;
-
-			if (iss >> value)
+			if (iss >> input_value)
 			{
-				_data.push_back(std::make_pair(datePtr, value));
-				std::cout << "Date: " << dateStr << ", Value: " << value << std::endl;
+				if (input_value > 1000)
+				{
+					std::cerr << "Error: too large number." << std::endl;
+					return ;
+				}
+				else if (input_value < 0)
+				{
+					std::cerr << "Error: not a positive number." << std::endl;
+					return ;
+				}
+				std::cout << dateStr << " => " << input_value << " = ";
+				getClosest( input_date, input_value );
 			}
 			else
-				std::cerr << "Error: No value found in line: " << line << std::endl;
-		}
-		else
-			std::cerr << "Error: Separator not found in line: " << line << std::endl;
+				std::cerr << "Error: bad input => " << line << std::endl;
 	}
+	else
+		std::cerr << "Error: bad input => " << line << std::endl;
+}
+
+void	BitcoinExchange::readInput( char *av )
+{
+	std::ifstream	file(av, std::ifstream::in);
+	std::string		line;
+
+	if (!file.is_open())
+	{
+		std::cerr << ERR_FILE << std::endl;
+		return ;
+	}
+	std::getline(file, line);
+	if (line.find("date | value", 0))
+	{
+		std::cerr << "Error: Unexpected input header." << std::endl;
+		file.close();
+		return ;
+	}
+	while (std::getline(file, line))
+		searchDB( line );
+	file.close();
 }
 
 bool	BitcoinExchange::isSep( char &c )
@@ -127,7 +222,7 @@ BitcoinExchange	&BitcoinExchange::operator=( BitcoinExchange &cpy)
 	return (*this);
 }
 
-/*		PUBLIC MEMBER FUNCTION		*/
+/*		PUBLIC MEMBER FUNCTIONs		*/
 
 bool	BitcoinExchange::error( void )
 {
@@ -135,3 +230,4 @@ bool	BitcoinExchange::error( void )
 		return (true);
 	return (false);
 }
+

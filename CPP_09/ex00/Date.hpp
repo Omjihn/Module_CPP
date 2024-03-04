@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:40:23 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 14:42:57 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 19:43:29 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ class Date
 		/*		OPERATORS OVERLOADING		*/
 
 		Date	&operator=( Date &cpy );
+		bool	operator>=( const Date &cmp ) const;
 		bool	operator<=( const Date &cmp ) const;
+		bool	operator==( const Date &cmp ) const;
 
 		/*		PUBLIC MEMBER FUNCTION		*/
 

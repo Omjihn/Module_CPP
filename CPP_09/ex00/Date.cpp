@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:48:31 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 14:47:47 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 20:01:25 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ Date::Date( void )
 	_error = false;
 }
 
-Date::Date( std::string &str ) : _error (0)
+Date::Date( std::string &str ) : _error (false)
 {
-	std::istringstream iss(str);
-	char	delimiter;
-	int		tempMonth, tempDay;
+	std::istringstream	iss(str);
+	char				delimiter;
+	int					tempMonth, tempDay;
 
 	if (!(iss >> _year >> delimiter >> tempMonth >> delimiter >> tempDay))
 	{
-		std::cerr << "Error: Invalid date format" << std::endl;
+		std::cerr << "Error: bad input => " << str << std::endl;
+		_error = true;
 		return ;
+	}
+	if (!tempMonth || !tempDay || tempMonth > 12 || tempDay > 31) /* NO ENTIERLY CORRECT BUT IT FIT THE SUBJECT */
+	{
+		std::cerr << "Error: bad input => " << str << std::endl;
+		_error = true;
 	}
 	_month = static_cast< unsigned char >(tempMonth);
 	_day = static_cast< unsigned char >(tempDay);
-	if (!_month || !_day || _month > 12 || _day > 31) /* NO ENTIERLY CORRECT BUT IT FIT THE SUBJECT */
-	{
-		std::cerr << "Error: Incorrect date value :\n\t" << str << std::endl;
-		_error = true;
-	}
-	std::cout << "Year :" << _year << "\nMonth :" << static_cast<int>(_month) << "\nDay :" << static_cast<int>(_day) << std::endl;
 }
 
 Date::Date( Date &val )
@@ -63,6 +63,18 @@ Date	&Date::operator=( Date &cpy )
 	return (*this);
 }
 
+bool	Date::operator>=( const Date &cmp ) const
+{
+	if (_year > cmp._year)
+		return (true);
+	else if (_year == cmp._year && _month > cmp._month)
+		return (true);
+	else if (_year == cmp._year && _month == cmp._month && _day >= cmp._day)
+		return (true);
+	else
+		return (false);
+}
+
 bool	Date::operator<=( const Date &cmp ) const
 {
 	if (_year < cmp._year)
@@ -73,6 +85,13 @@ bool	Date::operator<=( const Date &cmp ) const
 		return (true);
 	else
 		return (false);
+}
+
+bool	Date::operator==( const Date &cmp ) const
+{
+	if (_year == cmp._year && _month == cmp._month && _day == cmp._day)
+		return (true);
+	return (false);
 }
 
 bool	Date::getError( void ) const

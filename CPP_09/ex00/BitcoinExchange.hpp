@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:25 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 15:54:16 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/04 20:03:24 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,15 @@
 /*		ERROR MESSAGES		*/
 
 # define ERR_HEADER "Error: File header must follow this format :\nname1[any separators combination]name2\nAll posible separators : \" |,;\""
-# define ERR_ARG "Error: Wrong number of argument, Usage: ./btc [file.csv]"
+# define ERR_FILE "Error: could not open file."
+
+/*		DATA BASE NAME		*/
+
+# define DB_NAME "data.csv"
+
+/*		INPUT SEP		*/
+
+# define INPUT_SEP " | "
 
 class BitcoinExchange
 {
@@ -43,14 +51,18 @@ class BitcoinExchange
 
 		bool	isSep( char &c );
 		bool	getSeparator( std::string &line );
-		void	parseFile( std::string &av );
+		void	getAllLines( std::ifstream &file);
+		void	parseFile( const char *file_name );
+		void	searchDB( std::string &line );
+		void	getClosest( Date &input_date, float &input_value );
+		void	displayResult( float &input_value, float &price );
 		
 
 	public:
 
 		/*		CONSTRUCTOR/DESTRUCTOR		*/
 
-		BitcoinExchange( std::string av );
+		BitcoinExchange( void );
 		BitcoinExchange( BitcoinExchange &val );
 		~BitcoinExchange();
 
@@ -61,6 +73,7 @@ class BitcoinExchange
 		/*		PUBLIC MEMBER FUNCTION		*/
 
 		bool	error( void );
+		void	readInput( char *av );
 };
 
 #endif
