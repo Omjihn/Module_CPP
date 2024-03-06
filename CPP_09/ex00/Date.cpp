@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:48:31 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 20:01:25 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/06 10:33:01 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Date::Date( std::string &str ) : _error (false)
 	char				delimiter;
 	int					tempMonth, tempDay;
 
-	if (!(iss >> _year >> delimiter >> tempMonth >> delimiter >> tempDay))
+	if (!(iss >> _year >> delimiter >> tempMonth >> delimiter >> tempDay) \
+			|| iss.peek() != EOF)
 	{
 		std::cerr << "Error: bad input => " << str << std::endl;
 		_error = true;

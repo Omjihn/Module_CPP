@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:25 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 20:03:24 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/06 10:29:10 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ class BitcoinExchange
 
 	public:
 
-		/*		CONSTRUCTOR/DESTRUCTOR		*/
+		/*		CONSTRUCTORS/DESTRUCTOR		*/
 
 		BitcoinExchange( void );
 		BitcoinExchange( BitcoinExchange &val );
@@ -70,7 +70,7 @@ class BitcoinExchange
 
 		BitcoinExchange	&operator=( BitcoinExchange &cpy );
 
-		/*		PUBLIC MEMBER FUNCTION		*/
+		/*		PUBLIC MEMBERS FUNCTIONS		*/
 
 		bool	error( void );
 		void	readInput( char *av );

@@ -6,11 +6,13 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:27 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 20:10:52 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/06 17:22:49 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+/*		CONSTRUCTORS/DESTRUCTOR		*/
 
 BitcoinExchange::BitcoinExchange( void )
 {
@@ -89,18 +91,18 @@ void	BitcoinExchange::displayResult( float &input_value, float &price )
 	std::cout << input_value * price << std::endl;
 }
 
-/*		HORRIBLE FUNCTION NEED TO CHANGE IT (it's late :)		*/
 void	BitcoinExchange::getClosest( Date &input_date, float &input_value )
 {
-	std::deque<std::pair< Date *, float > >::iterator it = _data.begin();
+	std::deque< std::pair< Date *, float > >::iterator it = _data.begin();
 	if (input_date == *it->first)
 	{
 		displayResult( input_value, it->second );
 		return ;
 	}
-	if (input_date <= *it->first)
+	else if (input_date <= *it->first)
 	{
 		std::cerr << "Error: no data at this date." << std::endl;
+		return ;
 	}
 	while (it != _data.end())
 	{
@@ -117,7 +119,8 @@ void	BitcoinExchange::getClosest( Date &input_date, float &input_value )
 		}
 		it++;
 	}
-	std::cerr << "Error: no data at this date." << std::endl;
+	it--;
+	displayResult( input_value, it->second );
 }
 
 void	BitcoinExchange::searchDB( std::string &line )
@@ -127,54 +130,32 @@ void	BitcoinExchange::searchDB( std::string &line )
 
 	if (pos != std::string::npos)
 	{
-			std::string dateStr = line.substr(0, pos);
-			std::string valueStr = line.substr(pos + 3);
-			Date	input_date(dateStr);
-			if (input_date.getError())
-				return ;
-			std::istringstream iss(valueStr);
-			if (iss >> input_value)
+		std::string dateStr = line.substr(0, pos);
+		std::string valueStr = line.substr(pos + 3);
+		Date	input_date(dateStr);
+		if (input_date.getError())
+			return ;
+		std::istringstream iss(valueStr);
+		if (iss >> input_value && (iss.peek() == EOF))
+		{
+			if (input_value > 1000)
 			{
-				if (input_value > 1000)
-				{
-					std::cerr << "Error: too large number." << std::endl;
-					return ;
-				}
-				else if (input_value < 0)
-				{
-					std::cerr << "Error: not a positive number." << std::endl;
-					return ;
-				}
-				std::cout << dateStr << " => " << input_value << " = ";
-				getClosest( input_date, input_value );
+				std::cerr << "Error: too large a number." << std::endl;
+				return ;
 			}
-			else
-				std::cerr << "Error: bad input => " << line << std::endl;
+			else if (input_value < 0)
+			{
+				std::cerr << "Error: not a positive number." << std::endl;
+				return ;
+			}
+			std::cout << dateStr << " => " << input_value << " = ";
+			getClosest( input_date, input_value );
+		}
+		else
+			std::cerr << "Error: bad input => " << line << std::endl;
 	}
 	else
 		std::cerr << "Error: bad input => " << line << std::endl;
-}
-
-void	BitcoinExchange::readInput( char *av )
-{
-	std::ifstream	file(av, std::ifstream::in);
-	std::string		line;
-
-	if (!file.is_open())
-	{
-		std::cerr << ERR_FILE << std::endl;
-		return ;
-	}
-	std::getline(file, line);
-	if (line.find("date | value", 0))
-	{
-		std::cerr << "Error: Unexpected input header." << std::endl;
-		file.close();
-		return ;
-	}
-	while (std::getline(file, line))
-		searchDB( line );
-	file.close();
 }
 
 bool	BitcoinExchange::isSep( char &c )
@@ -222,7 +203,7 @@ BitcoinExchange	&BitcoinExchange::operator=( BitcoinExchange &cpy)
 	return (*this);
 }
 
-/*		PUBLIC MEMBER FUNCTIONs		*/
+/*		PUBLIC MEMBERS FUNCTIONS		*/
 
 bool	BitcoinExchange::error( void )
 {
@@ -231,3 +212,24 @@ bool	BitcoinExchange::error( void )
 	return (false);
 }
 
+void	BitcoinExchange::readInput( char *av )
+{
+	std::ifstream	file(av, std::ifstream::in);
+	std::string		line;
+
+	if (!file.is_open())
+	{
+		std::cerr << ERR_FILE << std::endl;
+		return ;
+	}
+	std::getline(file, line);
+	if (line.find("date | value", 0))
+	{
+		std::cerr << "Error: Unexpected input header." << std::endl;
+		file.close();
+		return ;
+	}
+	while (std::getline(file, line))
+		searchDB( line );
+	file.close();
+}

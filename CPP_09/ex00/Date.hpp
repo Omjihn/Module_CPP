@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:40:23 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/04 19:43:29 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/06 10:14:06 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <sstream>
+# include <cstdio>
 
 class Date
 {
