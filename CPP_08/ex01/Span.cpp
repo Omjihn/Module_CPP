@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/18 14:57:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:39:25 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Span::~Span()
 Span	&Span::operator=( const Span &val )
 {
 	std::cout << "[Span] Copy assignment operator called" << std::endl;
-	if (this != &val)
+	if (this != &val)	/*		Just in case someone try mySpan = mySpan;		*/
 	{
 		this->Array = val.Array;
 		this->index = val.index;
@@ -47,7 +47,7 @@ Span	&Span::operator=( const Span &val )
 	return (*this);
 }
 
-/*		MEMBER FUNCTION		*/
+/*		MEMBERS FUNCTIONS		*/
 
 void	Span::addNumber( int nb )
 {
@@ -64,7 +64,6 @@ void	Span::printContent( void )
 		std::cout << (Array.size() - index) << " space(s) left" << std::endl;
 	else
 		std::cout << "The Span is full" << std::endl;
-	
 }
 
 void	Span::addRandNumbers( void )
@@ -84,7 +83,7 @@ unsigned int	Span::shortestSpan( void )
 
 	std::sort(cpy.begin(), cpy.begin() + this->index);
 
-	int	shortest_span = INT_MAX;
+	int	shortest_span = Span::longestSpan();
 	std::vector<int>::iterator	it = cpy.begin();
 	for (unsigned int i = 0; (i + 1) < this->index; i++)
 	{
