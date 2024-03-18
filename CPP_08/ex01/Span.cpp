@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:37 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/24 09:12:13 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:57:00 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ Span::~Span()
 
 /*		OPERATOR OVERLOADING		*/
 
-Span	&Span::operator=( Span &val )
+Span	&Span::operator=( const Span &val )
 {
 	std::cout << "[Span] Copy assignment operator called" << std::endl;
-	this->Array.resize(val.Array.size());
-	for (unsigned int i = 0; i < val.Array.size(); i++)
-		this->Array.at(i) = val.Array.at(i);
-	this->index = val.index;
+	if (this != &val)
+	{
+		this->Array = val.Array;
+		this->index = val.index;
+	}
 	return (*this);
 }
 
