@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 03:14:28 by gbricot           #+#    #+#              #
-#    Updated: 2024/03/18 10:26:57 by gbricot          ###   ########.fr        #
+#    Updated: 2024/03/18 15:00:38 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR = ./
 SRC =		main.cpp
 
 OBJ_DIR = ./obj
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 
 ###
 ###			Just for visuals effects
@@ -46,7 +46,6 @@ endef
 
 ###
 ###
-
 
 all: $(NAME)
 
