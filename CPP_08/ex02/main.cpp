@@ -6,18 +6,12 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:32:14 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/18 09:31:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:47:37 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
 #include <vector>
-/*
-int	main(void)
-{
-	MutantStack<int>	test;
-	return (0);
-}*/
 
 void	main_subject( void )
 {
@@ -58,7 +52,7 @@ void	main_vector( void )
 	vect.push_back(737);
 	// [...]
 	vect.push_back(0);
-	for (std::vector<int>::iterator it = vect.begin(); it != vect.end(); ++it)
+	for (std::vector<int>::iterator it = vect.begin(); it != vect.end(); it++)
 	{
 		std::cout << *it << std::endl;
 	}
@@ -78,7 +72,7 @@ void	main_deque( void )
 	val.push_back(737);
 	// [...]
 	val.push_back(0);
-	for (std::deque<int>::iterator it = val.begin(); it != val.end(); ++it)
+	for (std::deque<int>::iterator it = val.begin(); it != val.end(); it++)
 	{
 		std::cout << *it << std::endl;
 	}
