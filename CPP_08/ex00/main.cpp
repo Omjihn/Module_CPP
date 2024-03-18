@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 03:17:11 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/18 10:53:17 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:09:11 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,6 @@ int	main(void)
 	init_container(v);
 
 	exec_tests(v, test_values);
-
-/* 	std::string	test_values[] = {"Hello", "World", "How", "Are", "You"};
-
-	std::cout << "Vector test : {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}" << std::endl;
-	std::vector< std::string >	v_string(10);
-
-	v_string.push_back(std::string("Hello"));
-	v_string.push_back(std::string("World"));
-	v_string.push_back(std::string("How"));
-	v_string.push_back(std::string("'s'"));
-	v_string.push_back(std::string("Doing"));
-
-	exec_tests(v, test_values); */
 
 /*	-------------------------------------------------------------------------	*/
 
