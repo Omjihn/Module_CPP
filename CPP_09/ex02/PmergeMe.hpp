@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:19:02 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/12 17:13:10 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/13 12:37:20 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class PmergeMe
 
 		/*		PRIVATE MEMBERS VARIABLES		*/
 
-		std::map < int, int >	_map_cont;
-		std::vector < unsigned int >		_vector_cont;
+		std::map < int, int >				_map_cont;
+		std::vector < int >		_vector_cont;
 
 		bool	_error;
 
@@ -44,7 +44,7 @@ class PmergeMe
 		bool	isNumber( std::string &str ) const;
 		unsigned long	countTime( bool param );\
 
-/* 		void	initMap( int &ac, char **av ); */
+		void	initMap( int &ac, char **av );
 		void	initVector( int &ac, char **av );
 
 	public:
@@ -55,9 +55,13 @@ class PmergeMe
 		PmergeMe( PmergeMe &val );
 		~PmergeMe( );
 
+		/*		OPERATOR OVERLOADING		*/
+
+		PmergeMe	&operator=( PmergeMe &cpy );
+
 		/*		PUBLIC MEMBERS FUNCTIONS		*/
 
-/* 		void	mapSorting( int &ac, char **av ); */
+		void	mapSorting( int &ac, char **av );
 		void	vectorSorting( int &ac, char **av );
 
 		bool	isError( void );
