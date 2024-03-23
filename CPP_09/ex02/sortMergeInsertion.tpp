@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   sortMergeInsertion.tpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 14:09:24 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/21 11:04:57 by gbricot          ###   ########.fr       */
+/*   Created: 2024/03/23 10:32:55 by gbricot           #+#    #+#             */
+/*   Updated: 2024/03/23 10:34:09 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class	FragTrap : public ClapTrap
+template < typename T >
+void	sortMergeInsertion( T &container )
 {
-	public:
-
-		FragTrap( void );
-		FragTrap( const std::string input_name );
-		~FragTrap();
-
-		void	highFivesGuys( void );
-};
+	
+}

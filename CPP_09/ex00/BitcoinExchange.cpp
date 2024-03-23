@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:27 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/06 17:22:49 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 09:46:54 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ BitcoinExchange::BitcoinExchange( BitcoinExchange &val )
 
 BitcoinExchange::~BitcoinExchange()
 {
-	for (std::deque<std::pair< Date *, float > >::iterator it = _data.begin(); it != _data.end(); it++)
+	for (std::map< Date *, float >::iterator it = _data.begin(); it != _data.end(); it++)
 	{
 		delete it->first;
 	}
@@ -53,7 +53,7 @@ void	BitcoinExchange::getAllLines( std::ifstream &file)
 			Date* datePtr = new Date(dateStr);
 			std::istringstream iss(valueStr);
 			if (iss >> value)
-				_data.push_back(std::make_pair(datePtr, value));
+				_data[datePtr] = value;
 			else
 				std::cerr << "Error: No value found in line: " << line << std::endl;
 		}
@@ -93,7 +93,7 @@ void	BitcoinExchange::displayResult( float &input_value, float &price )
 
 void	BitcoinExchange::getClosest( Date &input_date, float &input_value )
 {
-	std::deque< std::pair< Date *, float > >::iterator it = _data.begin();
+	std::map< Date *, float >::iterator it = _data.begin();
 	if (input_date == *it->first)
 	{
 		displayResult( input_value, it->second );

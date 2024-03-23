@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 09:36:46 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/29 14:32:09 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 15:56:54 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class	MutantStack : public std::stack< T >
 
 		/*		OPERATOR OVERLOADING		*/
 
-		//MutantStack	&operator=( MutanStack &val );
+		MutantStack	&operator=( const MutantStack &val );
 
 		/*		ITERATOR DECLARATION		*/
 
@@ -38,16 +38,8 @@ class	MutantStack : public std::stack< T >
 
 		/*		MEMBERS FUNCTIONS		*/
 
-		iterator	begin( void );/*
-		{
-			return (std::stack< T >::c.begin());
-		}
-*/
-		iterator        end( void );/*
-		{
-			return (std::stack< T >::c.end());
-		}
-*/
+		iterator	begin( void );
+		iterator	end( void );
 };
 
 # include "MutantStack.tpp"

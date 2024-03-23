@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:25:26 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 14:56:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/21 11:35:13 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap()
 {
-    std::cout << "[ScavTrap] Default constructor called" << std::endl;
-    ft_set_hit_point(100);
-    ft_set_energy_point(50);
-    ft_set_attack_dmg(20);
+	std::cout << "[ScavTrap] Default constructor called" << std::endl;
+	this->hit_point = 100;
+	this->energy_point = 50;
+	this->attack_dmg = 20;
 }
 
 ScavTrap::ScavTrap( const std::string input_name ) : ClapTrap(input_name)
 {
-    std::cout << "[ScavTrap] String constructor called" << std::endl;
-    ft_set_hit_point(100);
-    ft_set_energy_point(50);
-    ft_set_attack_dmg(20);
+	std::cout << "[ScavTrap] String constructor called" << std::endl;
+	this->hit_point = 100;
+	this->energy_point = 50;
+	this->attack_dmg = 20;
 }
 
 ScavTrap::~ScavTrap( void )
 {
-    std::cout << "[ScavTrap] Destructor called" << std::endl;
+	std::cout << "[ScavTrap] Destructor called" << std::endl;
 }
 
-void    ScavTrap::guardGate( void )
+void	ScavTrap::guardGate( void )
 {
-    std::cout << "ScavTrap " << ft_get_name() << " is now in gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << ft_get_name() << " is now in gate keeper mode" << std::endl;
 }

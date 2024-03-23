@@ -6,25 +6,22 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:24:52 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/19 11:18:17 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/21 11:34:55 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-#ifndef SCAV_TRAP
-# define SCAV_TRAP
-
-class   ScavTrap : virtual public ClapTrap
+class	ScavTrap : virtual public ClapTrap
 {
-    public:
+	public:
 
-        ScavTrap( void );
-        ScavTrap( const std::string input_name );
-        ~ScavTrap();
+		ScavTrap( void );
+		ScavTrap( const std::string input_name );
+		~ScavTrap();
 
-        void    guardGate( void );
+		void	guardGate( void );
 };
-
-#endif

@@ -6,28 +6,28 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 18:41:54 by gbricot           #+#    #+#             */
-/*   Updated: 2023/10/16 15:01:30 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/21 12:04:19 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class   ClapTrap
+class	ClapTrap
 {
-    public:
+	public:
 
-          ClapTrap( void );
-          ClapTrap( const std::string input_name );
-          ~ClapTrap();
+		ClapTrap( void );
+		ClapTrap( const std::string input_name );
+		~ClapTrap();
 
-          void  attack( const std::string &target );
-          void  takeDamage( unsigned int amount );
-          void  beRepaired( unsigned int amount );
+		void	attack( const std::string &target );
+		void	takeDamage( unsigned int amount );
+		void	beRepaired( unsigned int amount );
 
-    private:
+	private:
 
-        const std::string   name;
-        unsigned int    hit_point;
-        unsigned int    energy_point;
-        unsigned int    attack_dmg;
+		std::string			name;
+		unsigned int		hit_point;
+		unsigned int		energy_point;
+		unsigned int		attack_dmg;
 };

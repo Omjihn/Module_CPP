@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:36:26 by gbricot           #+#    #+#             */
-/*   Updated: 2024/02/24 09:12:08 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/18 14:52:28 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class	Span
 
 		/*		OPERATOR OVERLOADING		*/
 
-		Span	&operator=( Span &val );
+		Span	&operator=( const Span &val );
 
 		/*		MEMBERS FUNCTIONS		*/
 

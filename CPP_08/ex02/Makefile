@@ -6,7 +6,7 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/24 09:31:49 by gbricot           #+#    #+#              #
-#    Updated: 2024/02/27 10:48:47 by gbricot          ###   ########.fr        #
+#    Updated: 2024/03/18 10:18:43 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,15 @@ CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 
-SRC =		main.cpp
+SRC_DIR = ./
+SRC =	main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+OBJ_DIR = ./obj
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
+
+
+###
+###			Just for visuals effects
 
 BLUE = "\033[0;36m"
 WHITE = "\033[0;37m"
@@ -27,8 +33,6 @@ GREEN = "\033[0;32m"
 
 TOTAL = $(words $(SRC))
 COUNT = 0
-
-ERROR_LOG = /tmp/error_log.txt
 
 define colorecho
 	@tput civis
@@ -41,15 +45,18 @@ define colorecho
 	@tput cnorm
 endef
 
+###
+###
+
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 	@$(call colorecho, $(GREEN)Compiling program :  )
-	@$(CC) $(CPPFLAGS) $^ -o $@ 2>/dev/null
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 	@echo $(GREEN)[$(NAME)] Successfully compilated !$(WHITE)
 
-%.o: %.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 	@echo -n "Compiling objects files: "
 	@echo -n "["
@@ -61,18 +68,21 @@ $(NAME): $(OBJ)
 		echo -n "-"; \
 	done
 	@echo -n "] $(shell echo $$(($(COUNT) * 100 / $(TOTAL))))%    "
-	@$(CC) $(CPPFLAGS) -c $< -o $@ 2>$(ERROR_LOG) || (cat $(ERROR_LOG) && rm -f $(ERROR_LOG) && exit 1)
+	@$(CC) $(CPPFLAGS) -c $< -o $@
 	@echo -n "\r"
 
 regular:
-	@$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
+	@$(CC) $(CPPFLAGS) $(SRC_DIR)/$(SRC) -o $(NAME)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
+	@rm -rf $(OBJ_DIR)
 	@echo $(RED)Objects files deleted$(WHITE)
-	@rm -f $(OBJ)
 
 fclean: clean
-	@echo $(RED)Program deleted$(WHITE)
 	@rm -f $(NAME)
+	@echo $(RED)Program deleted$(WHITE)
 
 re: fclean all
