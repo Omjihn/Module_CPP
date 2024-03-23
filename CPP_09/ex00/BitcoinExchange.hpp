@@ -6,14 +6,14 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 11:58:25 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/06 10:29:10 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 09:42:51 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-# include <deque>
+# include <map>
 # include <string>
 # include <cctype>
 # include <fstream>
@@ -43,9 +43,9 @@ class BitcoinExchange
 
 		/*		PRIVATE MEMBERS VARIABLES		*/
 
-		std::deque< std::pair<Date *, float> >	_data;
-		std::string								_sep;
-		bool									_error;
+		std::map<Date *, float>	_data;
+		std::string				_sep;
+		bool					_error;
 
 		/*		PRIVATE MEMBERS FUNCTIONS		*/
 
