@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:18:54 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/13 12:50:15 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 10:26:24 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PmergeMe::PmergeMe( int &ac, char **av) : _error (false)
 	}
 }
 
-PmergeMe::PmergeMe( PmergeMe &val ) :	_map_cont(val._map_cont), \
+PmergeMe::PmergeMe( PmergeMe &val ) :	_deque_cont(val._deque_cont), \
 										_vector_cont(val._vector_cont), \
 										_error(val._error)
 {
@@ -40,55 +40,28 @@ PmergeMe::~PmergeMe( )
 
 PmergeMe	&PmergeMe::operator=( PmergeMe &cpy )
 {
-	_map_cont = cpy._map_cont;
+	_deque_cont = cpy._deque_cont;
 	_vector_cont = cpy._vector_cont;
 	_error = cpy._error;
 	return (*this);
 }
 
-void	PmergeMe::initMap( int &ac, char **av )
-{
-	int	nb;
-	for (int i = 1; i < ac; i++)
-	{
-		std::string str(av[i]);
-		std::istringstream iss(str);
-		iss >> nb;
-		_map_cont[i - 1] = nb;
-	}
-}
-
-void	PmergeMe::mapSorting( int &ac, char **av )
+void	PmergeMe::dequeSorting( int &ac, char **av )
 {
 	countTime(START);
-	initMap( ac, av );
-	//sortMap();
+	initContainer( ac, av, _deque_cont );
+	std::sort( _deque_cont.begin(), _deque_cont.end() );
 	unsigned int exec_time = countTime(STOP);
-	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "map : " << exec_time << " us" << std::endl;
-}
-
-void	PmergeMe::initVector( int &ac, char **av )
-{
-	unsigned int	nb;
-	for (int i = 1; i < ac; i++)
-	{
-		std::string str(av[i]);
-		std::istringstream iss(str);
-		iss >> nb;
-		_vector_cont.push_back(nb);
-	}
+	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "deque : " << exec_time << " us" << std::endl;
 }
 
 void	PmergeMe::vectorSorting( int &ac, char **av )
 {
 	countTime(START);
-	initVector( ac, av );
+	initContainer( ac, av, _vector_cont );
 	std::sort(_vector_cont.begin(), _vector_cont.end());
 	unsigned long exec_time = countTime(STOP);
 	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "vector : " << exec_time << " us" << std::endl;
-/*	    for (std::vector< unsigned int>::iterator it = _vector_cont.begin(); it != _vector_cont.end(); ++it) {
-        std::cout << *it << "\n";
-    } */
 }
 
 unsigned long	PmergeMe::countTime( bool param )

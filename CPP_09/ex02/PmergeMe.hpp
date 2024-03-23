@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:19:02 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/13 12:37:20 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 10:34:27 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@
 # include <sys/time.h>
 # include <algorithm>
 # include <unistd.h>
-# include <map>
+# include <deque>
 # include <vector>
+
+# include "initContainer.tpp"
+# include "sortMergeInsertion.tpp"
 
 class PmergeMe
 {
@@ -33,7 +36,7 @@ class PmergeMe
 
 		/*		PRIVATE MEMBERS VARIABLES		*/
 
-		std::map < int, int >				_map_cont;
+		std::deque< int >		_deque_cont;
 		std::vector < int >		_vector_cont;
 
 		bool	_error;
@@ -42,10 +45,7 @@ class PmergeMe
 
 		bool	checkInput( std::string str );
 		bool	isNumber( std::string &str ) const;
-		unsigned long	countTime( bool param );\
-
-		void	initMap( int &ac, char **av );
-		void	initVector( int &ac, char **av );
+		unsigned long	countTime( bool param );
 
 	public:
 
@@ -61,7 +61,7 @@ class PmergeMe
 
 		/*		PUBLIC MEMBERS FUNCTIONS		*/
 
-		void	mapSorting( int &ac, char **av );
+		void	dequeSorting( int &ac, char **av );
 		void	vectorSorting( int &ac, char **av );
 
 		bool	isError( void );
