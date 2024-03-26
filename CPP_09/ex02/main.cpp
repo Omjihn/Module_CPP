@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:18:00 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/26 11:02:30 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:22:20 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	main( int ac, char **av )
 	printBeforeAfter( ac, av );
 	sort.dequeSorting( ac, av );
 	sort.vectorSorting( ac, av );
+	//sort.printContainers(); // Print the containers
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:18:54 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/26 11:04:54 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:19:39 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,18 @@ void	PmergeMe::vectorSorting( int &ac, char **av )
 	mergeInsertionSort(_vector_cont, 0, _vector_cont.size() - 1, 20);
 	unsigned long exec_time = countTime(STOP);
 	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "vector : " << exec_time << " us" << std::endl;
+}
+
+void	PmergeMe::printContainers( void )
+{
+	std::cout << "deque : ";
+	for (std::deque<int>::iterator it = _deque_cont.begin(); it != _deque_cont.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+	std::cout << "vector : ";
+	for (std::vector<int>::iterator it = _vector_cont.begin(); it != _vector_cont.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
 }
 
 unsigned long	PmergeMe::countTime( bool param )

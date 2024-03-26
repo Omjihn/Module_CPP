@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:19:02 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/26 09:55:46 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:18:14 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ class PmergeMe
 
 		void	dequeSorting( int &ac, char **av );
 		void	vectorSorting( int &ac, char **av );
+
+		void	printContainers( void );
 
 		bool	isError( void );
 
