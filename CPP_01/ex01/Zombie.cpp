@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:22:57 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/23 15:23:00 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 14:15:01 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,26 @@
 
 Zombie::Zombie( void )
 {
-    this->name = "";
+	this->_name = "";
 }
 
 Zombie::Zombie( std::string name )
 {
-    this->name = name;
+	this->_name = name;
 }
 
 Zombie::~Zombie( void )
 {
-    if (this->name.length())
-        std::cout << this->name << " nous a quitte... On lui souhaite un bon courage." << std::endl;
+	if (this->_name.length())
+		std::cout << this->_name << " nous a quitte... On lui souhaite un bon courage." << std::endl;
 }
 
-void    Zombie::announce( void )
+void	Zombie::announce( void )
 {
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName( std::string name )
+{
+	this->_name = name;
 }

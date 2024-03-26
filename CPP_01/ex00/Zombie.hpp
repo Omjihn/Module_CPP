@@ -3,33 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbricot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 15:23:09 by gbricot           #+#    #+#             */
-/*   Updated: 2023/09/23 15:23:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/23 14:30:23 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
 
-class   Zombie
+class	Zombie
 {
-    public:
+	public:
 
-        Zombie( std::string );
-        ~Zombie();
+		Zombie( std::string name );
+		~Zombie();
 
-        void    announce( void );
+		void	announce( void );
 
-    private:
+	private:
 
-        std::string name;
+		std::string	_name;
 };
 
-#ifndef ZOMBIE
- #define ZOMBIE
-
- Zombie* newZombie( std::string name );
- void    randomChump( std::string name );
-
-#endif
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );

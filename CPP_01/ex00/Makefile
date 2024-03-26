@@ -6,32 +6,84 @@
 #    By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/23 15:22:31 by gbricot           #+#    #+#              #
-#    Updated: 2023/09/29 17:01:22 by gbricot          ###   ########.fr        #
+#    Updated: 2024/03/23 14:28:40 by gbricot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		BraiiiiiiinnnzzzZ
 
-CC =		c++
+CC = c++
 
-CPPFLAGS =	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-unused
 
+SRC_DIR = ./
 SRC =		main.cpp \
-			Zombie.cpp \
 			newZombie.cpp \
-			randomChump.cpp
+			randomChump.cpp \
+			Zombie.cpp
 
-OBJ	=		$(SRC:.cpp=.o)
+OBJ_DIR = ./obj
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
 
-$(NAME):	$(OBJ)
-			$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
+###
+###			Just for visuals effects
 
-all:		$(NAME)
+BLUE = "\033[0;36m"
+WHITE = "\033[0;37m"
+RED = "\033[0;31m"
+GREEN = "\033[0;32m"
+
+TOTAL = $(words $(SRC))
+COUNT = 0
+
+define colorecho
+	@tput civis
+	@echo -n $(1) "     ["
+	@for i in `seq 1 $(TOTAL)`; do \
+		echo -n "▓"; \
+		sleep 0.05; \
+	done
+	echo -n "]"; echo " 100%";
+	@tput cnorm
+endef
+
+###
+###
+
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR) $(OBJ)
+	@$(call colorecho, $(GREEN)Compiling program :  )
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@echo $(GREEN)[$(NAME)] Successfully compilated !$(WHITE)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
+	@echo -n "Compiling objects files: "
+	@echo -n "["
+	
+	@for i in `seq 1 $(shell echo $$(($(COUNT) * $(TOTAL) / $(TOTAL))))`; do \
+		echo -n "▓"; \
+	done
+	@for i in `seq 1 $$(($(TOTAL) - $(COUNT) * $(TOTAL) / $(TOTAL)))`; do \
+		echo -n "-"; \
+	done
+	@echo -n "] $(shell echo $$(($(COUNT) * 100 / $(TOTAL))))%    "
+	@$(CC) $(CPPFLAGS) -c $< -o $@
+	@echo -n "\r"
+
+regular:
+	@$(CC) $(CPPFLAGS) $(SRC_DIR)/$(SRC) -o $(NAME)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
-			@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
+	@echo $(RED)Objects files deleted$(WHITE)
 
-fclean:		clean
-			@rm -f $(NAME)
+fclean: clean
+	@rm -f $(NAME)
+	@echo $(RED)Program deleted$(WHITE)
 
-re:			fclean $(NAME)
+re: fclean all
