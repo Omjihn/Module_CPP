@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:18:00 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/23 09:56:11 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:02:30 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	printBeforeAfter( int &ac, char **av )
 	}
 	if (6 < ac)
 		std::cout << "[...]";
-	std::cout << std::endl;
-	std::cout << "After:	";
+	std::cout << "\nAfter:	";
 	std::sort(nb.begin(), nb.end());
 	for ( std::vector<int>::iterator it = nb.begin(); it != nb.end(); it++)
 		std::cout << *it << " ";

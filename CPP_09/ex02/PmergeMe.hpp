@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:19:02 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/23 10:34:27 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 09:55:46 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class PmergeMe
 
 		/*		PRIVATE MEMBERS VARIABLES		*/
 
-		std::deque< int >		_deque_cont;
+		std::deque < int >		_deque_cont;
 		std::vector < int >		_vector_cont;
 
 		bool	_error;

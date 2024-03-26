@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 15:18:54 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/23 10:26:24 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:04:54 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	PmergeMe::dequeSorting( int &ac, char **av )
 {
 	countTime(START);
 	initContainer( ac, av, _deque_cont );
-	std::sort( _deque_cont.begin(), _deque_cont.end() );
+	mergeInsertionSort(_deque_cont, 0, _deque_cont.size() - 1, 20);
 	unsigned int exec_time = countTime(STOP);
 	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "deque : " << exec_time << " us" << std::endl;
 }
@@ -59,7 +59,7 @@ void	PmergeMe::vectorSorting( int &ac, char **av )
 {
 	countTime(START);
 	initContainer( ac, av, _vector_cont );
-	std::sort(_vector_cont.begin(), _vector_cont.end());
+	mergeInsertionSort(_vector_cont, 0, _vector_cont.size() - 1, 20);
 	unsigned long exec_time = countTime(STOP);
 	std::cout << MSG_RANGE << ac - 1 << MSG_TYPE << "vector : " << exec_time << " us" << std::endl;
 }
