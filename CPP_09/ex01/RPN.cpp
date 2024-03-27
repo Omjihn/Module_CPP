@@ -6,7 +6,7 @@
 /*   By: gbricot <gbricot@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:47:15 by gbricot           #+#    #+#             */
-/*   Updated: 2024/03/07 17:07:13 by gbricot          ###   ########.fr       */
+/*   Updated: 2024/03/27 13:15:31 by gbricot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,16 @@ bool	RPN::doTheMaths( void )
 	while (iss >> buffer)
 	{
 		if (is_number(buffer))
-			numbers.push(stringToInt(buffer));
+		{
+			int	toAdd = stringToInt(buffer);
+			if (toAdd < 10)
+				numbers.push(stringToInt(buffer));
+			else
+			{
+				std::cerr << "Error : input numbers must be lower than 10." << std::endl;
+				return (false);
+			}
+		}
 		else if (is_operator(buffer))
 		{
 			if (!execOperator(buffer.at(0)))
